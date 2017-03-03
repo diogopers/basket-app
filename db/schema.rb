@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303144735) do
+ActiveRecord::Schema.define(version: 20170303183337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baskets", force: :cascade do |t|
+    t.string   "size"
+    t.string   "type"
+    t.float    "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "extra_orders", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "extra_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["extra_id"], name: "index_extra_orders_on_extra_id", using: :btree
+    t.index ["order_id"], name: "index_extra_orders_on_order_id", using: :btree
+  end
+
+  create_table "extras", force: :cascade do |t|
+    t.string   "photo"
+    t.string   "name"
+    t.float    "price"
+    t.string   "info"
+    t.integer  "producer_id"
+    t.string   "category"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["producer_id"], name: "index_extras_on_producer_id", using: :btree
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "basket_id"
+    t.float    "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["basket_id"], name: "index_orders_on_basket_id", using: :btree
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
+  end
+
+  create_table "producers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.string   "bio"
+    t.string   "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +81,9 @@ ActiveRecord::Schema.define(version: 20170303144735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "extra_orders", "extras"
+  add_foreign_key "extra_orders", "orders"
+  add_foreign_key "extras", "producers"
+  add_foreign_key "orders", "baskets"
+  add_foreign_key "orders", "users"
 end
