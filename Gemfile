@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
+gem 'omniauth-facebook'
+gem "figaro"
+
 gem 'rails', '5.0.1'
 gem 'puma'
 gem 'pg'
@@ -20,7 +23,7 @@ gem 'autoprefixer-rails'
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-  
+
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
