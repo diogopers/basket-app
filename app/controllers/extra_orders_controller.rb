@@ -1,0 +1,2 @@
+class ExtraOrdersController < ApplicationController
+end
