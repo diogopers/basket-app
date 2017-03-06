@@ -1,0 +1,166 @@
+.card-wrapper {
+  position: relative;
+  border-radius: 5px;
+  height: 240px;
+  // width: 300px;
+  background-color: #ffffff;
+  padding: 10px;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+}
+
+.card {
+  height: 180px;
+  // width: 100px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+}
+
+.card-price {
+  background-color: #499491;
+  color: #fff;
+  height: 30px;
+  width: 50px;
+  border-radius: 5px;
+  text-align: center;
+  right: 10px;
+  bottom: 10px;
+  position: absolute;
+}
+
+.card-price h3 {
+  font-size: 1em;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 5px;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+.card-product {
+  border-radius: 5px;
+  text-align: center;
+  left: 14px;
+  bottom: 5px;
+  position: absolute;
+  font-size: 0.8em;
+}
+
+.card-product h2 {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 1.4em;
+  color: #499491;
+
+}
+
+
+.card-user {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+
+.info {
+  float: left;
+  margin-left: 14px;
+  margin-top: 16px;
+}
+
+.info p {
+  font-size: 0.8em;
+  color: #787878 !important;
+}
+
+.quantity {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.quantity li {
+  background-color: $dark-yellow;
+  border-radius: 5px;
+  width: 26px;
+  height: 30px;
+}
+
+.quantity li h4 {
+  color: #fff;
+  font-size: 1em;
+}
+
+
+.cart-card-container {
+  position: relative;
+  height: 90px;
+  width: 120px;
+  margin-top: 10px;
+}
+
+.cart-card-wrapper {
+  position: relative;
+  border-radius: 5px;
+  height: 90px;
+  width: 120px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+}
+
+.cart-card {
+  height: 80px;
+  width: 120px;
+  // width: 100px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-card h2 {
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: white;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin: 0px;
+  // justify-content: center;
+}
