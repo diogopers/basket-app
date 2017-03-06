@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.3.3'
 
 gem 'omniauth-facebook'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 gem 'rails', '5.0.1'
 gem 'puma'
