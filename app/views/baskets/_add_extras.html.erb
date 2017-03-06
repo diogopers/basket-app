@@ -1,4 +1,19 @@
 <div class="container">
+  <div class="filter">
+
+    <h4>Filter by category</h4>
+
+
+    <%= form_tag root_path, method: :get, :class => "form-inline checkbox-circle checkbox-primary" do %>
+
+      <%= label_tag "dairy", raw("#{check_box_tag('dairy')} Dairy") %>
+      <%= label_tag "bakery", raw("#{check_box_tag('bakery')} Bakery") %>
+      <%= label_tag "beverage", raw("#{check_box_tag('beverage')} Baverage") %>
+      <%= label_tag "ingredients", raw("#{check_box_tag('ingredients')} Ingredients") %>
+
+    <% end %>
+  </div>
+
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
       <%= render 'baskets/extra_card' %>
@@ -15,4 +30,4 @@
   </div>
 </div>
 
-<%= render 'baskets/footer_cart' %>
+

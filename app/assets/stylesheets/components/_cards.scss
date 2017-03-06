@@ -1,3 +1,41 @@
+.filter {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  height: 50px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+  display: flex;
+  justify-content: center;
+}
+
+.filter h4 {
+  float: left;
+  margin: auto 0px;
+  margin-right: 20px;
+  font-size: 1em;
+  font-weight: 700;
+  color: $special-green;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.filter form {
+  float: right;
+  margin: auto 0px;
+  margin-left: 30px;
+}
+
+.filter label {
+  margin-right: 30px;
+  margin-bottom: 0px;
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 0.8em;
+}
+
 .card-wrapper {
   position: relative;
   border-radius: 5px;
