@@ -1,10 +1,11 @@
 .banner {
-  height: 100vh;
+  height: 75vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("banner.jpeg");
   background-size: cover;
+  background-position: center;
   h1 {
     color: white;
     font-size: 45px;
@@ -12,7 +13,14 @@
   p {
     color: white;
     opacity: 0.8;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: lighter;
+    margin-bottom: 30px;
   }
+  .btn {
+    padding: 7px 30px;
+    border-radius: 50px;
+    font-weight: lighter;
+    font-size: 18px;
   }
+}

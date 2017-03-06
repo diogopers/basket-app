@@ -10,6 +10,16 @@
   justify-content: space-between;
 }
 
+.navbar-home {
+  position: fixed;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  .navbar-wagon-link {
+  color: white;
+  }
+}
+
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
