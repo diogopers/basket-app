@@ -10,11 +10,23 @@
     </div>
   </div>
   <div class="container text-center">
-    <div class="tab-content" id="selectbasket"></div>
-    <div class="tab-content hidden" id="picksize"></div>
-    <div class="tab-content hidden" id="addextras"></div>
-    <div class="tab-content hidden" id="revieworder"></div>
-    <div class="tab-content hidden" id="address"></div>
-    <div class="tab-content hidden" id="paymentconfirmation"></div>
+    <div class="tab-content" id="selectbasket">
+      <%= render 'baskets/select' %>
+    </div>
+    <div class="tab-content hidden" id="picksize">
+      <%= render 'baskets/pick_size' %>
+    </div>
+    <div class="tab-content hidden" id="addextras">
+      <%= render 'baskets/add_extras' %>
+    </div>
+    <div class="tab-content hidden" id="revieworder">
+      <%= render 'baskets/review' %>
+    </div>
+    <div class="tab-content hidden" id="address">
+      <%= render 'baskets/address' %>
+    </div>
+    <div class="tab-content hidden" id="paymentconfirmation">
+      <%= render 'baskets/confirmation' %>
+    </div>
   </div>
 </div>
