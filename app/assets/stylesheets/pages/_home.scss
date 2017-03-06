@@ -1,35 +1,26 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
-
-.row img {
+.value img {
   vertical-align: middle;
   height: 250px;
   margin-bottom: 20px;
   border-radius: 150px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-
 .row h4 {
   color: $green;
   font-weight: bold;
   margin-top: 5px;
 }
-
-.row p {
+.value p {
   color: #404040;
   line-height: 25px;
   margin-top: 25px;
 }
-
-.container {
+#home-container {
   background-color: $light-yellow;
   padding-top: 20px;
   width: 100%;
   height: 550px;
 }
-
 .value {
   padding: 50px;
 }
