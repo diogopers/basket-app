@@ -1,34 +1,3 @@
-<% content_for(:navbar_class, "navbar-home") %>
-<div class="banner">
-  <div class="banner-content text-center">
-    <h1>Order once, delivered weekly</h1>
-    <p>The best local products selected and delivered directly to you.</p>
-    <%= link_to "Build your Basket", new_user_session_path, class: "btn btn-lg btn-primary" %>
-  </div>
-</div>
+<%= render 'shared/extra_columns' %>
 
-<div class="container text-center padded features" id="home-container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="value">
-        <%= image_tag "convenience.jpg" %>
-        <h4>Convenience</h4>
-        <p>Select online the products that you and your family love and receive your customized basket every week.</p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="value">
-        <%= image_tag "quality.jpg" %>
-        <h4>Quality</h4>
-        <p>Make your choice among the best vegetables, fruits and agricultural products we selected for you.</p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="value">
-        <%= image_tag "lifestyle.jpg" %>
-        <h4>Lifestyle</h4>
-        <p>Your products arrive in front of your door, directly sourced from responsible and local producers.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'shared/footer_cart' %>
