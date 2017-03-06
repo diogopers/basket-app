@@ -3,7 +3,13 @@
 //= require bootstrap-sprockets
 //= require_tree .
 $(function(){
+  $(".category").on("click", function(e){
+    $("#menu-op-2").click();
+  });
 
+  $("#basket-size").on("click", function(e){
+    $("#menu-op-3").click();
+  })
   $(".tab").on("click", function(e){
     // Change active tab
     var activetab = $(".active");
