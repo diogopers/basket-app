@@ -1,0 +1,32 @@
+<div class="container">
+  <div id="basket-menu">
+    <div class="tabs">
+      <a class="tab active" data-target="#selectbasket">Select Basket ></a>
+      <a class="tab" data-target="#picksize"> Pick Size ></a>
+      <a class="tab" data-target="#addextras"> Add Extras > </a>
+      <a class="tab" data-target="#revieworder"> Review Order ></a>
+      <a class="tab" data-target="#address">Address > </a>
+      <a class="tab" data-target="#paymentconfirmation">Payment and confirmation</a>
+    </div>
+  </div>
+  <div class="container text-center">
+    <div class="tab-content" id="selectbasket">
+      <%= render 'baskets/select' %>
+    </div>
+    <div class="tab-content hidden" id="picksize">
+      <%= render 'baskets/pick_size' %>
+    </div>
+    <div class="tab-content hidden" id="addextras">
+      <%= render 'baskets/add_extras' %>
+    </div>
+    <div class="tab-content hidden" id="revieworder">
+      <%= render 'baskets/review' %>
+    </div>
+    <div class="tab-content hidden" id="address">
+      <%= render 'baskets/address' %>
+    </div>
+    <div class="tab-content hidden" id="paymentconfirmation">
+      <%= render 'baskets/confirmation' %>
+    </div>
+  </div>
+</div>

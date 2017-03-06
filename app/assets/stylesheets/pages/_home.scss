@@ -3,7 +3,7 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.row img {
+.value img {
   vertical-align: middle;
   height: 250px;
   margin-bottom: 20px;
@@ -17,13 +17,13 @@
   margin-top: 5px;
 }
 
-.row p {
+.value p {
   color: #404040;
   line-height: 25px;
   margin-top: 25px;
 }
 
-.container {
+#home-container {
   background-color: $light-yellow;
   padding-top: 20px;
   width: 100%;
