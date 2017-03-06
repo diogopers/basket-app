@@ -1,0 +1,27 @@
+#myModal {
+  text-align: left;
+
+
+}
+
+#myModal h1 {
+  color: $dark-yellow;
+  font-weight: 700;
+}
+
+#myModal h4 {
+  color: $text;
+  font-weight: 300;
+}
+
+#myModal p {
+  color: $text;
+  font-weight: 100;
+  font-size: 0.9em;
+}
+
+#myModal .modal-content {
+  border-radius: 5px;
+  border: 0px;
+  padding: 10px 26px;
+}
