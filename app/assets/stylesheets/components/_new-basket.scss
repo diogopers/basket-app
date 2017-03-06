@@ -28,7 +28,7 @@
 }
 
 #select h5 {
-  font-weight: 700;
+  font-weight: 600;
   color: #499491;
 }
 
@@ -43,4 +43,31 @@
   margin-bottom: 20px;
   border-radius: 150px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.container#pick-size {
+  padding-top: 45px;
+  width: 80%;
+}
+
+#basket-size {
+  padding-top: 50px;
+
+}
+
+#basket-size img {
+  vertical-align: middle;
+  height: 170px;
+  margin-bottom: 20px;
+}
+
+#pick-size h2 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+  color: #FBD400;
+}
+
+#pick-size h5 {
+  font-weight: 600;
+  color: #499491;
 }
