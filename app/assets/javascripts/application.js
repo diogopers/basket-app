@@ -9,7 +9,11 @@ $(function(){
 
   $("#basket-size").on("click", function(e){
     $("#menu-op-3").click();
-  })
+  });
+
+  $(".review-order").on("click", function(e){
+    $("#menu-op-4").click();
+  });
   $(".tab").on("click", function(e){
     // Change active tab
     var activetab = $(".active");
