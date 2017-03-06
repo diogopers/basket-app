@@ -1,0 +1,11 @@
+<%= simple_form_for(current_user) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :street_address %>
+  <%= f.input :city %>
+
+  <%= f.button :submit, class: "btn btn-primary", aria_pressed: "true", value: "Update my informations" %>
+<% end %>
