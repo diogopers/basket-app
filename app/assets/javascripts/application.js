@@ -15,9 +15,10 @@ $(function(){
     $("#menu-op-4").click();
   });
 
-  $("#submit-order").on("click"), function(e){
+  $("#submit-order").on("click", function(e){
+    console.log("menu-op-5")
     $("#menu-op-5").click();
-  }
+  });
   $(".tab").on("click", function(e){
     // Change active tab
     var activetab = $(".active");
