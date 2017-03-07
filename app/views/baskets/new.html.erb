@@ -1,14 +1,6 @@
 <div class="container">
-  <div id="basket-menu">
-    <div class="tabs">
-      <a class="tab active" data-target="#selectbasket" id="menu-op-1" >Select Basket ></a>
-      <a class="tab" data-target="#picksize" id="menu-op-2" > Pick Size  > </a>
-      <a class="tab" data-target="#addextras" id="menu-op-3" > Add Extras  >  </a>
-      <a class="tab" data-target="#revieworder" id="menu-op-4" > Review Order  > </a>
-      <a class="tab" data-target="#address" id="menu-op-5" >Address  >  </a>
-      <a class="tab" data-target="#paymentconfirmation" id="menu-op-6" >Payment and confirmation</a>
-    </div>
-  </div>
+  <%= render 'baskets/basket_menu' %>
+
   <div class="container text-center">
     <div class="tab-content" id="selectbasket">
       <%= render 'baskets/select' %>
@@ -30,3 +22,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'baskets/footer_cart' %>

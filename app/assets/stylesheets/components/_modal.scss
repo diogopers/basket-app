@@ -1,0 +1,25 @@
+.producer-modal {
+  text-align: left;
+}
+
+.producer-modal h1 {
+  color: $dark-yellow;
+  font-weight: 700;
+}
+
+.producer-modal h4 {
+  color: $text;
+  font-weight: 300;
+}
+
+.producer-modal p {
+  color: $text;
+  font-weight: 100;
+  font-size: 0.9em;
+}
+
+.producer-modal .modal-content {
+  border-radius: 5px;
+  border: 0px;
+  padding: 10px 26px;
+}

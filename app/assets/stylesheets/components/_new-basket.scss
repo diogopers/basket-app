@@ -7,8 +7,13 @@
   font-size: 11pt;
   text-align: center;
 }
+
 .tabs a {
   color: $light-green;
+}
+
+.tab {
+  margin-right: 10px;
 }
 
 .tab.active {

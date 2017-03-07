@@ -1,18 +1,83 @@
 <div class="container">
+  <div class="filter">
+
+    <h4>Filter by category</h4>
+
+
+    <%= form_tag root_path, method: :get, :class => "form-inline checkbox-circle checkbox-primary" do %>
+
+      <%= label_tag "dairy", raw("#{check_box_tag('dairy')} Dairy") %>
+      <%= label_tag "bakery", raw("#{check_box_tag('bakery')} Bakery") %>
+      <%= label_tag "beverage", raw("#{check_box_tag('beverage')} Baverage") %>
+      <%= label_tag "ingredients", raw("#{check_box_tag('ingredients')} Ingredients") %>
+
+    <% end %>
+  </div>
+
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
-      <%= render 'baskets/extra_card' %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
-      <%= render 'baskets/extra_card' %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
-      <%= render 'baskets/extra_card' %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
-      <%= render 'baskets/extra_card' %>
-    </div>
+    <% @extras.each do |extra| %>
+      <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
+        <div class="card-container">
+          <div class="card-wrapper">
+
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://vitalvedaaus.files.wordpress.com/2016/10/olive-oil-wood.jpg')">
+
+              <%= cl_image_tag extra.producer.photo.url, class: "card-user avatar pointer",
+                       "data-toggle" => "modal", "data-target" => "#modal-#{extra.producer_id}" %>
+
+            </div>
+              <div class="card-product">
+                <h2> <%= extra.name %> </h2>
+              </div>
+
+
+              <div class="card-price">
+                <h3> $<%= extra.price %> </h3>
+              </div>
+          </div>
+
+          <div class="info">
+            <p> <%= extra.info %> </p>
+          </div>
+
+          <div class="quantity">
+            <ul class="list-inline">
+              <li><h4>-</h4></li>
+              <li><h4>2</h4></li>
+              <li><h4>+</h4></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MODAL -->
+
+      <div class="modal fade producer-modal" id="modal-<%= extra.producer_id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+              <%= cl_image_tag extra.producer.photo.url, class: "avatar-large" %>
+
+              <h1 class="modal-title"><%= extra.producer.name %></h1>
+              <h4 class="modal-title"><%= extra.producer.city %></h4>
+            </div>
+            <div class="modal-body">
+              <p> <%= extra.producer.bio %> </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- END MODAL -->
+
+    <% end %>
   </div>
 </div>
 
-<%= render 'baskets/footer_cart' %>
+
+
+
