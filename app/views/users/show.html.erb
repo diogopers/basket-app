@@ -1,14 +1,36 @@
-<h2>Hello <%= @user.first_name %>!</h2>
-<h4>Personnal informations</h4>
-<p>First name</p>
-<%= @user.first_name %>
-<p>Last name</p>
-<%= @user.last_name %>
-<p>Email address</p>
-<%= @user.email %>
-<p>Address</p>
-<%= @user.street_address %>
-<p>City</p>
-<%= @user.city %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="profile">
 
-<%= link_to "Edit my profile", edit_user_path(@user), class: "btn btn-primary", aria_pressed: "true", name: "Edit profile" %>
+        <h4>Personnal informations</h4>
+        <p class="title">
+        First name
+        <span class="injection" style="padding-left:49px;"><%= @user.first_name %></span>
+        <br>
+        <br>
+        Last name
+        <span class="injection" style="padding-left:50px;"><%= @user.last_name %></span>
+        <br>
+        <br>
+        Email address
+        <span class="injection" style="padding-left:25px;"><%= @user.email %></span>
+        <br>
+        <br>
+        Address
+        <span class="injection" style="padding-left:62px;"><%= @user.street_address %></span>
+        <br>
+        <br>
+        City
+        <span class="injection" style="padding-left:92px;"><%= @user.city %></span>
+        <br>
+        <br>
+        </p>
+
+        <%= link_to "Edit my profile", edit_user_path(@user), class: "btn btn-primary", aria_pressed: "true", name: "Edit profile" %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
