@@ -5,10 +5,18 @@
 $(function(){
   $(".category").on("click", function(e){
     $("#menu-op-2").click();
+    $("#category").val(($(this).data("category")));
+
+    // console.log(category);
   });
 
-  $("#basket-size").on("click", function(e){
+  $(".basket-size").on("click", function(e){
+    $("#size").val(($(this).data("size")));
+    $("#new_basket").submit();
+
     $("#menu-op-3").click();
+
+    // console.log(size);
   });
 
   $(".review-order").on("click", function(e){

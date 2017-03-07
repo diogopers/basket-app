@@ -1,20 +1,21 @@
 <div class="container" id="select">
   <h2>What do you want in your Basket?</h2>
   <div class="row" id="basket-type">
-    <div class="category">
-      <div class="col-md-4 col-xs-12">
+
+    <div data-category="vegetables" class="category">
+      <div class="col-sm-4 col-xs-12">
         <%= image_tag "vegetables.jpg" %>
         <h5>Vegetables</h5>
       </div>
     </div>
-    <div class="category">
-      <div class="col-md-4 col-xs-12">
+    <div data-category="fruits" class="category">
+      <div class="col-sm-4 col-xs-12">
         <%= image_tag "fruits.jpg" %>
         <h5>Fruits</h5>
       </div>
     </div>
-    <div class="category">
-      <div class="col-md-4 col-xs-12">
+    <div data-category="both" class="category">
+      <div class="col-sm-4 col-xs-12">
         <%= image_tag "fruitsvegetables.jpg" %>
         <h5>Fruits & Vegetables</h5>
       </div>
