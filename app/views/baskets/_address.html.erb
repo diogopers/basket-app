@@ -1,1 +1,22 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY async defer></script>
+<div class="container">
+  <div class="row flexbox">
+    <div class="col-xs-12 col-md-8">
+
+
+
+    </div>
+
+    <div class="col-xs-12 col-md-4 location">
+      <h4>Find your closest delivery point</h4>
+
+      <%= simple_form_for(current_user) do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :street_address %>
+        <%= f.input :city %>
+
+        <%= f.button :submit, class: "btn btn-primary", aria_pressed: "true", value: "Find a delivery point" %>
+      <% end %>
+    </div>
+  </div>
+</div>

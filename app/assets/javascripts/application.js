@@ -1,7 +1,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require underscore
+//= require gmaps/google
 //= require_tree .
+
+
 $(function(){
   $(".category").on("click", function(e){
     $("#menu-op-2").click();

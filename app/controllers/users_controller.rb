@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @user_coordinates = { lat: @user.latitude, lng: @user.longitude }
   end
 
   def edit
