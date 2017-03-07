@@ -15,7 +15,7 @@ $(function(){
     $("#new_basket").submit();
 
     $("#menu-op-3").click();
-
+    $("#footer-cart").removeClass('hidden');
     // console.log(size);
   });
 
@@ -38,5 +38,7 @@ $(function(){
     var target = $(this).data('target');
     $(target).removeClass('hidden');
   });
-
+  $("#menu-op-3").on("click", function(e){
+    $("#footer-cart").removeClass('hidden');
+  })
 });
