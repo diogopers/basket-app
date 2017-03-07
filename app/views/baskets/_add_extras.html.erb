@@ -23,7 +23,7 @@
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://vitalvedaaus.files.wordpress.com/2016/10/olive-oil-wood.jpg')">
 
               <%= cl_image_tag extra.producer.photo.url, class: "card-user avatar pointer",
-                       "data-toggle" => "modal", "data-target" => "#myModal" %>
+                       "data-toggle" => "modal", "data-target" => "#modal-#{extra.producer_id}" %>
 
             </div>
               <div class="card-product">
@@ -53,12 +53,14 @@
 
       <!-- MODAL -->
 
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade producer-modal" id="modal-<%= extra.producer_id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <img class="avatar-large" src="http://wp.production.patheos.com/blogs/thepangeablog/files/2011/12/Kurt-Profile-Image-Square-Brick-1024x1024.jpg">
+
+              <%= cl_image_tag extra.producer.photo.url, class: "avatar-large" %>
+
               <h1 class="modal-title"><%= extra.producer.name %></h1>
               <h4 class="modal-title"><%= extra.producer.city %></h4>
             </div>
