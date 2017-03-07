@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+    @user.address = user_params[:street_address] + ", " + user_params[:city]
+
     @user.update(user_params)
 
     redirect_to user_path(current_user)
