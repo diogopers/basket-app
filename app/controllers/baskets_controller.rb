@@ -1,12 +1,17 @@
 class BasketsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :new
 
   def new
     @producers = Producer.all
     @extras = Extra.all
-  end
-    
-  skip_before_action :authenticate_user!, only: [:new, :create]
+    @baskets = Basket.all
 
-  def create
+    @basket = Basket.new
   end
+
+  # private
+
+  # def basket_params
+  #   params.require(:basket).permit(:size, :type)
+  # end
 end

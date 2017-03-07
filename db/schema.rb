@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303204911) do
+ActiveRecord::Schema.define(version: 20170307161300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "baskets", force: :cascade do |t|
     t.string   "size"
-    t.string   "type"
-    t.float    "price"
+    t.string   "category"
+    t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170303204911) do
     t.float    "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "status"
     t.index ["basket_id"], name: "index_orders_on_basket_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
