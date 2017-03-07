@@ -1,3 +1,7 @@
+.debug {
+  border: solid 1px red;
+}
+
 #basket-menu {
   font-family: 'Dosis', sans-serif;
   font-size: 11pt;
@@ -5,7 +9,7 @@
 }
 
 .tabs a {
-  color: #A3DEC9;
+  color: $light-green;
 }
 
 .tab {
@@ -13,28 +17,28 @@
 }
 
 .tab.active {
-  color: #499491;
+  color: $dark-green;
 }
 
 .container {
   padding-top: 30px;
-  width: 100%;
-  height: 550px;
 }
 
-.container#select {
+.container.select {
   padding-top: 45px;
-  width: 80%;
+  width: 70%;
+  text-align: center;
 }
-#select h2 {
+.select h2 {
   font-family: 'Dosis', sans-serif;
   font-weight: 700;
-  color: #FBD400;
+  color: $dark-yellow;
 }
 
-#select h5 {
+.select h5 {
   font-weight: 600;
-  color: #499491;
+  color: $dark-green;
+  margin: 15px 0;
 }
 
 #basket-type {
@@ -50,10 +54,6 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.container#pick-size {
-  padding-top: 45px;
-  width: 80%;
-}
 
 #basket-size {
   padding-top: 50px;
@@ -66,13 +66,55 @@
   margin-bottom: 20px;
 }
 
-#pick-size h2 {
-  font-family: 'Dosis', sans-serif;
-  font-weight: 700;
-  color: #FBD400;
+.fa-shopping-basket {
+  color: $dark-yellow;
+  margin: 0 10px;
 }
 
-#pick-size h5 {
-  font-weight: 600;
-  color: #499491;
+.cart-card-basket {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('vegetables.jpg');
+  width: 150px;
+  height: 100px;
+  background-size: cover !important;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.20);
+}
+
+.review {
+  text-align: left;
+  display: justify;
+}
+
+.row-cart {
+  display: inline-flex;
+
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.cart-card-extras {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-card-producers {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+#total-button{
+  border-radius: 5px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: flex-end;
+
 }
