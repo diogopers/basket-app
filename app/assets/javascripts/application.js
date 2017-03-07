@@ -11,9 +11,13 @@ $(function(){
     $("#menu-op-3").click();
   });
 
-  $(".review-order").on("click", function(e){
+  $("#review-footer-button").on("click", function(e){
     $("#menu-op-4").click();
   });
+
+  $("#submit-order").on("click"), function(e){
+    $("#menu-op-5").click();
+  }
   $(".tab").on("click", function(e){
     // Change active tab
     var activetab = $(".active");
