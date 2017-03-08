@@ -28,15 +28,35 @@ $(function(){
     $("#footer-cart").addClass('hidden');
   });
 
-  $(".card-container").on("click", function(e){
+  $(".card-wrapper").on("click", function(e){
     $("#extra_id").val(($(this).data("id")));
-    // total = parseInt($("#quantity").val());
-    // total++;
-    // $("#quantity").val(total)
     $("#new_extra_order").submit();
+    var qtd = $(this).siblings(".quantity").find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) + 1)
+  });
+
+  function decreaseCounter() {}
+
+  function increaseCounter() {}
+
+  function destroyObject() {
+    $("#destroy_extra_order").submit();
+  }
 
 
-    // console.log(category);
+
+  $(".add-item").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    $("#new_extra_order").submit();
+    var qtd = $(this).prev().find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) + 1)
+  });
+
+  $(".remove-item").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    $("#delete_extra_order").submit();
+    var qtd = $(this).siblings(".quantity").find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) - 1)
   });
 
   $("#submit-order").on("click", function(e){
