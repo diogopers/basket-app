@@ -6,8 +6,6 @@ $(function(){
   $(".category").on("click", function(e){
     $("#menu-op-2").click();
     $("#category").val(($(this).data("category")));
-
-    // console.log(category);
   });
 
   $(".basket-size").on("click", function(e){
@@ -15,12 +13,21 @@ $(function(){
     $("#new_basket").submit();
 
     $("#menu-op-3").click();
-
-    // console.log(size);
   });
 
   $("#review-footer-button").on("click", function(e){
     $("#menu-op-4").click();
+  });
+
+  $(".card-container").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    // total = parseInt($("#quantity").val());
+    // total++;
+    // $("#quantity").val(total)
+    $("#new_extra_order").submit();
+
+
+    // console.log(category);
   });
 
   $("#submit-order").on("click", function(e){

@@ -5,8 +5,8 @@ class BasketsController < ApplicationController
     @producers = Producer.all
     @extras = Extra.all
     @baskets = Basket.all
-
     @basket = Basket.new
+    @extra_order = ExtraOrder.new
   end
 
   # private
