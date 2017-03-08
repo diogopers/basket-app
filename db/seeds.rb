@@ -5,11 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Extra.destroy_all
 ExtraOrder.destroy_all
+Extra.destroy_all
 Order.destroy_all
 Basket.destroy_all
 Producer.destroy_all
+DeliveryPoint.destroy_all
 
 Basket.create! ({
   size: "small",
