@@ -1,7 +1,7 @@
 <div class="container">
   <%= render 'baskets/basket_menu' %>
 
-  <div class="container text-center">
+  <div class="padded text-center">
     <div class="tab-content" id="selectbasket">
       <%= render 'baskets/select' %>
     </div>
@@ -14,7 +14,7 @@
     <div class="tab-content hidden" id="revieworder">
       <%= render 'baskets/review' %>
     </div>
-    <div class="tab-content hidden" id="address">
+    <div class="tab-content" id="address">
       <%= render 'baskets/address' %>
     </div>
     <div class="tab-content hidden" id="paymentconfirmation">
@@ -23,4 +23,7 @@
   </div>
 </div>
 
-<%= render 'baskets/footer_cart' %>
+  <%= render 'baskets/footer_cart' %>
+
+
+

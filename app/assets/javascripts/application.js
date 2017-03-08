@@ -1,13 +1,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require underscore
+//= require gmaps/google
 //= require_tree .
+
+
 $(function(){
   $(".category").on("click", function(e){
     $("#menu-op-2").click();
     $("#category").val(($(this).data("category")));
-
-    // console.log(category);
   });
 
   $(".basket-size").on("click", function(e){
@@ -15,13 +17,46 @@ $(function(){
     $("#new_basket").submit();
 
     $("#menu-op-3").click();
+
     $("#footer-cart").removeClass('hidden');
     // console.log(size);
+
   });
 
   $("#review-footer-button").on("click", function(e){
     $("#menu-op-4").click();
     $("#footer-cart").addClass('hidden');
+  });
+
+  $(".card-wrapper").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    $("#new_extra_order").submit();
+    var qtd = $(this).siblings(".quantity").find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) + 1)
+  });
+
+  function decreaseCounter() {}
+
+  function increaseCounter() {}
+
+  function destroyObject() {
+    $("#destroy_extra_order").submit();
+  }
+
+
+
+  $(".add-item").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    $("#new_extra_order").submit();
+    var qtd = $(this).prev().find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) + 1)
+  });
+
+  $(".remove-item").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    $("#delete_extra_order").submit();
+    var qtd = $(this).siblings(".quantity").find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) - 1)
   });
 
   $("#submit-order").on("click", function(e){
