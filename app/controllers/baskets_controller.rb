@@ -8,6 +8,7 @@ class BasketsController < ApplicationController
     @extras = Extra.all
     @baskets = Basket.all
     @basket = Basket.new
+    @extra_order = ExtraOrder.new
   end
 
   private
