@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @user_coordinates = { lat: @user.latitude, lng: @user.longitude }
   end
 
   def edit
@@ -9,6 +10,8 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+    @user.address = user_params[:street_address] + ", " + user_params[:city]
+
     @user.update(user_params)
 
     redirect_to user_path(current_user)

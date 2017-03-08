@@ -1,7 +1,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require underscore
+//= require gmaps/google
 //= require_tree .
+
+
 $(function(){
   $(".category").on("click", function(e){
     $("#menu-op-2").click();
@@ -13,6 +17,10 @@ $(function(){
     $("#new_basket").submit();
 
     $("#menu-op-3").click();
+
+    $("#footer-cart").removeClass('hidden');
+    // console.log(size);
+
   });
 
   $("#review-footer-button").on("click", function(e){
@@ -45,5 +53,7 @@ $(function(){
     var target = $(this).data('target');
     $(target).removeClass('hidden');
   });
-
+  $("#menu-op-3").on("click", function(e){
+    $("#footer-cart").removeClass('hidden');
+  })
 });
