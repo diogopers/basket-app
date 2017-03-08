@@ -1,0 +1,12 @@
+<div class="cart-card-container">
+  <ul class="list-inline">
+    <% @extra_orders.each do |extra_order| %>
+      <div class="badge badge-green">3</div>
+      <div class="cart-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra_order.extra.photo, crop: :fill %>')">
+        <h2><%= extra_order.extra.name %></h2>
+        <li class="plus-sign"><i class="fa fa-plus" aria-hidden="true"></i></li>
+        <a class="card-link" href="#" ></a>
+      </div>
+    <% end %>
+  </ul>
+</div>

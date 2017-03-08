@@ -1,8 +1,10 @@
 <%= simple_form_for(@extra_order, :url => extra_orders_path, :method => :post, remote: true) do |form| %>
-  <%= form.input :order_id, :input_html => { value: session[:order_id] } %>
-  <%= form.input :extra_id, :input_html => { :id => "extra_id" } %>
-  <%= form.button :submit %>
+  <%= form.input :order_id, as: :hidden, :input_html => { value: session[:order_id] } %>
+  <%= form.input :extra_id, as: :hidden, :input_html => { :id => "extra_id" } %>
+  <%= form.button :submit, :style => "display: none;" %>
 <% end %>
+
+
 
 <!-- FILTER -->
   <div class="filter">
@@ -21,8 +23,8 @@
   <div class="row">
     <% @extras.each do |extra| %>
       <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
-        <div data-id="<%=extra.id%>" class="card-container pointer">
-          <div class="card-wrapper">
+        <div class="card-container pointer">
+          <div data-id="<%=extra.id%>" class="card-wrapper">
 
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra.photo, crop: :fill %>')">
 
@@ -46,9 +48,9 @@
 
           <div class="quantity">
             <ul class="list-inline">
-              <li><h4>-</h4></li>
-              <li><h4>2</h4></li>
-              <li><h4>+</h4></li>
+              <li data-id="<%=extra.id%>" class="remove-item"><h4>-</h4></li>
+              <li><h4 class="quantity-display"> <%= extra.extra_orders.find_by(order_id: session[:order_id]).quantity %> </h4></li>
+              <li data-id="<%=extra.id%>" class="add-item"><h4>+</h4></li>
             </ul>
           </div>
 
