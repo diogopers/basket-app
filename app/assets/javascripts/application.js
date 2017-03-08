@@ -25,6 +25,7 @@ $(function(){
 
   $("#review-footer-button").on("click", function(e){
     $("#menu-op-4").click();
+    $("#footer-cart").addClass('hidden');
   });
 
   $(".card-container").on("click", function(e){
