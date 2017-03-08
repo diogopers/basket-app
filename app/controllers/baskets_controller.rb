@@ -1,8 +1,12 @@
 class BasketsController < ApplicationController
+    before_action :set_delivery_points, only: [:new]
   def new
+
   end
 
-  def delivery_points
+  private
+
+  def set_delivery_points
     @delivery_points = DeliveryPoint.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@delivery_points) do |delivery_point, marker|
@@ -11,5 +15,4 @@ class BasketsController < ApplicationController
       # marker.infowindow render_to_string(partial: "/delivery_points/map_box", locals: { flat: flat })
     end
   end
-
 end

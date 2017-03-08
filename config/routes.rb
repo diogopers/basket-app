@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get "baskets/:id/confirmation", to: "baskets#confirmation"
   get "orders/:id/success", to: "orders#success"
   get "orders/:id/failure", to: "orders#failure"
-  get "baskets/delivery_points", to: "baskets#delivery_points"
 
   resources :users, only: [:show, :edit, :update]
 
