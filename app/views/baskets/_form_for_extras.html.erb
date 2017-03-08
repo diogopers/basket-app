@@ -1,0 +1,5 @@
+<%= simple_form_for(@extra_order, :url => orders_path, :method => :post, remote: true) do |form| %>
+  <%= form.input :extra_id, :as => :hidden, :input_html => { :id => "extra_id" } %>
+  <%= form.input :quantity, :as => :hidden, :input_html => { :id => "quantity" } %>
+  <%= form.button :submit, :type => :hidden %>
+<% end %>
