@@ -1,7 +1,13 @@
 class BasketsController < ApplicationController
-    before_action :set_delivery_points, only: [:new]
-  def new
 
+  before_action :set_delivery_points, only: :new
+  skip_before_action :authenticate_user!, only: :new
+  
+  def new
+    @producers = Producer.all
+    @extras = Extra.all
+    @baskets = Basket.all
+    @basket = Basket.new
   end
 
   private
@@ -15,4 +21,11 @@ class BasketsController < ApplicationController
       # marker.infowindow render_to_string(partial: "/delivery_points/map_box", locals: { flat: flat })
     end
   end
+  
+  # private
+
+  # def basket_params
+  #   params.require(:basket).permit(:size, :type)
+  # end
+
 end
