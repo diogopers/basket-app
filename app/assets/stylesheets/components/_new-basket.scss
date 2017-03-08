@@ -72,17 +72,19 @@
 }
 
 .cart-card-basket {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('vegetables.jpg');
-  width: 150px;
-  height: 100px;
-  background-size: cover !important;
-  border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.20);
+  border-radius: 5px;
+}
+
+.cart-card-basket img {
+  width: 100%;
+  border-radius: 5px;
+
 }
 
 .review {
   text-align: left;
-  display: justify;
+  display: block;
 }
 
 .row-cart {
@@ -111,10 +113,18 @@ hr {
   padding: 10px 10px;
 }
 
-#total-button{
+.review-total {
+  background-color: $dark-yellow;
+  color: white;
   border-radius: 5px;
-  margin: 15px 0;
-  display: flex;
-  justify-content: flex-end;
-
+  float: right;
+  display: inline;
+  width:100%;
+  height: 105px;
 }
+
+.review-price {
+  float: left;
+  padding: 5%;
+}
+
