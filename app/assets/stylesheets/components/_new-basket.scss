@@ -24,7 +24,7 @@
   padding-top: 30px;
 }
 
-.container.select {
+.select {
   padding-top: 45px;
   width: 70%;
   text-align: center;
@@ -113,18 +113,7 @@ hr {
   padding: 10px 10px;
 }
 
-.review-total {
-  background-color: $dark-yellow;
-  color: white;
-  border-radius: 5px;
-  float: right;
-  display: inline;
-  width:100%;
-  height: 105px;
-}
+.payment {
+  text-justify: left;
 
-.review-price {
-  float: left;
-  padding: 5%;
 }
-
