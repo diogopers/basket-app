@@ -1,4 +1,6 @@
 class Basket < ApplicationRecord
+  monetize :price_cents  # or :price_pennies
+
   CATEGORIES = %w(vegetables fruits both)
   SIZES = %w(small medium large)
 

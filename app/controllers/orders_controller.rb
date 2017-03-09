@@ -1,10 +1,11 @@
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: :create
 
+  @order = Order.find(session[:order_id])
+
   def create
     @basket = Basket.find_by(category: basket_params[:category],
                              size:     basket_params[:size])
-
     if session[:order_id].present?
       @order = Order.find(session[:order_id])
       @order.basket = @basket
