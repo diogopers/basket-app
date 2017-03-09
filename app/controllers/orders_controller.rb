@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
 
   private
   def basket_params
-    params.require(:basket).permit(:category, :size)
+    params.require(:basket).permit(:category, :size, :size_url)
   end
 
 end

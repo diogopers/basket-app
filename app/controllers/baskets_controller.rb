@@ -4,11 +4,13 @@ class BasketsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def new
+
     @order = Order.find(session[:order_id])
+
     @producers = Producer.all
     @extras = Extra.all
     @baskets = Basket.all
-    @basket = Basket.new
+
     @extra_order = ExtraOrder.new
     @extra_orders = ExtraOrder.where(order_id: session[:order_id])
   end
