@@ -4,7 +4,9 @@ class BasketsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def new
-    @basket = Basket.new
+
+    @order = Order.find(session[:order_id])
+
     @producers = Producer.all
     @extras = Extra.all
     @baskets = Basket.all

@@ -1,12 +1,17 @@
-<% @extra_orders.each do |extra_order| %>
-  <li>
-    <div class="cart-card-container">
-      <div class="badge badge-green"> <%=extra_order.quantity %> </div>
-      <div class="cart-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra_order.extra.photo, crop: :fill %>')">
-        <h2><%= extra_order.extra.name %></h2>
-        <a class="card-link" href="#" ></a>
+<div id="mini-card-cart">
+  <ul class="list-inline">
+  <% order.extra_orders.order(:created_at).each do |extra_order| %>
+    <li>
+      <div class="cart-card-container">
+        <%#= render 'extra_orders/badge_counter', extra_order: extra_order %>
+        <div id="qtd-badge-<%= extra_order.extra.id %>" class="badge badge-green"> <%= extra_order.quantity %> </div>
+        <div class="cart-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra_order.extra.photo, crop: :fill %>')">
+          <h2><%= extra_order.extra.name %></h2>
+          <a class="card-link" href="#" ></a>
+        </div>
       </div>
-    </div>
-  </li>
-<% end %>
-<li class="plus-sign"><i class="fa fa-plus" aria-hidden="true"></i></li>
+    </li>
+    <li class="plus-sign"><i class="fa fa-plus" aria-hidden="true"></i></li>
+  <% end %>
+  </ul>
+</div>

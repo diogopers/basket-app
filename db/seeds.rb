@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 ExtraOrder.destroy_all
 Extra.destroy_all
 Order.destroy_all
@@ -15,55 +8,61 @@ DeliveryPoint.destroy_all
 Basket.create! ({
   size: "small",
   category: "fruits",
-  price: 1290,
+  price_cents: 1290,
   size_url: "size-s.png"
+
   })
 Basket.create! ({
   size: "medium",
   category: "fruits",
-  price: 2090,
+  price_cents: 2090,
   size_url: "size-m.png"
+
   })
 Basket.create! ({
   size: "large",
   category: "fruits",
-  price: 2590,
+  price_cents: 2590,
   size_url: "size-s.png"
   })
 Basket.create! ({
   size: "small",
   category: "vegetables",
-  price: 1290,
+  price_cents: 1290,
   size_url: "size-g.png"
   })
 Basket.create! ({
   size: "medium",
   category: "vegetables",
-  price: 2090,
+  price_cents: 2090,
   size_url: "size-m.png"
+
   })
 Basket.create! ({
   size: "large",
   category: "vegetables",
-  price: 2590,
+  price_cents: 2590,
   size_url: "size-g.png"
+
   })
 Basket.create! ({
   size: "small",
   category: "both",
-  price: 1290,
+  price_cents: 1290,
   size_url: "size-s.png"
+
   })
 Basket.create! ({
   size: "medium",
   category: "both",
-  price: 2090,
+  price_cents: 2090,
   size_url: "size-m.png"
+
   })
 Basket.create! ({
   size: "large",
   category: "both",
-  price: 2590,
+  price_cents: 2590,
   size_url: "size-g.png"
   })
 
@@ -89,7 +88,7 @@ producer_2 = Producer.create!({
 
 Extra.create!({
     name: "Olive Oil",
-    price: 8.99,
+    price_cents: 899,
     info: "30oz",
     category: "oils",
     producer_id: producer_1.id,
@@ -98,7 +97,7 @@ Extra.create!({
 
 Extra.create!({
     name: "Whole wheat bread",
-    price: 12.99,
+    price_cents: 1299,
     info: "With pumpking seeds - 500g",
     category: "bakery",
     producer_id: producer_2.id,
@@ -107,7 +106,7 @@ Extra.create!({
 
 Extra.create!({
     name: "Free range eggs",
-    price: 7.29,
+    price_cents: 729,
     info: "Box with 12",
     category: "ingredients",
     producer_id: producer_1.id,
