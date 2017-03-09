@@ -41,8 +41,8 @@
         <div class="row ">
           <div class="cart-card-extras">
             <ul class="list-inline">
-              <% order.extra_orders.each do |extra| %>
-                <li> <%= image_tag extra.photo %> <i class="fa fa-trash-o" aria-hidden="true"></i> </li>
+              <% order.extra_orders.each do |extra_order| %>
+                <li> <%= image_tag extra_order.extra.photo %> <i class="fa fa-trash-o" aria-hidden="true"></i> </li>
               <% end %>
               </ul>
               </div>
