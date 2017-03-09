@@ -23,12 +23,12 @@ Basket.create! ({
   price: 2090
   })
 Basket.create! ({
-  size: "small",
+  size: "large",
   category: "fruits",
   price: 2590
   })
 Basket.create! ({
-  size: "large",
+  size: "small",
   category: "vegetables",
   price: 1290
   })
