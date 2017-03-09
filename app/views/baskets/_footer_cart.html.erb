@@ -13,20 +13,13 @@
 
 
   <div class="horizontal-scroll">
-    <ul class="list-inline">
-      <%= render 'baskets/mini_card'%>
-    </ul>
+      <%= render 'baskets/mini_card', order: @order %>
   </div>
 
-
-
-
-
   <div class="total">
-
     <div class="price">
       <p>TOTAL<p>
-      <h3>$123.99</h3>
+      <h3> <%= humanized_money_with_symbol(@order.basket.price) %> </h3>
     </div>
 
 

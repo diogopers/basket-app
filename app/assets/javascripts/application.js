@@ -31,9 +31,26 @@ $(function(){
 
   $(".card-wrapper").on("click", function(e){
     $("#extra_id").val(($(this).data("id")));
+    $("#action_cart").val("increase");
     $("#new_extra_order").submit();
     var qtd = $(this).siblings(".quantity").find(".quantity-display");
     qtd.text(parseInt(qtd.text()) + 1)
+  });
+
+  $(".add-item").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    $("#action_cart").val("increase");
+    $("#new_extra_order").submit();
+    var qtd = $(this).prev().find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) + 1)
+  });
+
+  $(".remove-item").on("click", function(e){
+    $("#extra_id").val(($(this).data("id")));
+    $("#action_cart").val("decrease");
+    $("#new_extra_order").submit();
+    var qtd = $(this).siblings(".quantity").find(".quantity-display");
+    qtd.text(parseInt(qtd.text()) - 1)
   });
 
   function decreaseCounter() {}
@@ -46,19 +63,7 @@ $(function(){
 
 
 
-  $(".add-item").on("click", function(e){
-    $("#extra_id").val(($(this).data("id")));
-    $("#new_extra_order").submit();
-    var qtd = $(this).prev().find(".quantity-display");
-    qtd.text(parseInt(qtd.text()) + 1)
-  });
 
-  $(".remove-item").on("click", function(e){
-    $("#extra_id").val(($(this).data("id")));
-    $("#delete_extra_order").submit();
-    var qtd = $(this).siblings(".quantity").find(".quantity-display");
-    qtd.text(parseInt(qtd.text()) - 1)
-  });
 
   $("#submit-order").on("click", function(e){
     console.log("menu-op-5")

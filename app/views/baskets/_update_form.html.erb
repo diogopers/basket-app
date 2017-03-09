@@ -1,0 +1,16 @@
+<%= simple_form_for(@extra_order, :url => extra_order_path(@extra_order), :method => :patch, remote: true) do |form| %>
+  <%= form.input :order_id, as: :hidden, :input_html => { value: session[:order_id] } %>
+  <%= form.input :extra_id, as: :hidden, :input_html => { :id => "extra_id" } %>
+  <%= form.button :submit%>
+<% end %>
+
+<%= simple_form_for(session_extra_order(extra), :url => extra_order_path(session_extra_order(extra)), :method => :patch, remote: true) do |form| %>
+      <%= form.input :order_id, as: :hidden, :input_html => { value: session[:order_id] } %>
+      <%= form.input :extra_id, as: :hidden, :input_html => { value: extra.id } %>
+      <%= form.button :submit%>
+    <% end %>
+
+
+<% if @extra_order.id != nil %>
+  <%= render "baskets/update_form" %>
+<% end %>
