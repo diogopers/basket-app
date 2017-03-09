@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   def create
     @basket = Basket.find_by(category: basket_params[:category],
                              size:     basket_params[:size])
-
     if session[:order_id].present?
       @order = Order.find(session[:order_id])
       @order.basket = @basket
@@ -21,7 +20,7 @@ class OrdersController < ApplicationController
 
   private
   def basket_params
-    params.require(:basket).permit(:category, :size)
+    params.require(:basket).permit(:category, :size, :size_url)
   end
 
 end

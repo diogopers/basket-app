@@ -15,47 +15,56 @@ DeliveryPoint.destroy_all
 Basket.create! ({
   size: "small",
   category: "fruits",
-  price: 1290
+  price: 1290,
+  size_url: "size-s.png"
   })
 Basket.create! ({
   size: "medium",
   category: "fruits",
-  price: 2090
+  price: 2090,
+  size_url: "size-m.png"
   })
 Basket.create! ({
   size: "small",
   category: "fruits",
-  price: 2590
+  price: 2590,
+  size_url: "size-s.png"
   })
 Basket.create! ({
   size: "large",
   category: "vegetables",
-  price: 1290
+  price: 1290,
+  size_url: "size-g.png"
   })
 Basket.create! ({
   size: "medium",
   category: "vegetables",
-  price: 2090
+  price: 2090,
+  size_url: "size-m.png"
   })
 Basket.create! ({
   size: "large",
   category: "vegetables",
-  price: 2590
+  price: 2590,
+  size_url: "size-g.png"
   })
 Basket.create! ({
   size: "small",
   category: "both",
-  price: 1290
+  price: 1290,
+  size_url: "size-s.png"
   })
 Basket.create! ({
   size: "medium",
   category: "both",
-  price: 2090
+  price: 2090,
+  size_url: "size-m.png"
   })
 Basket.create! ({
   size: "large",
   category: "both",
-  price: 2590
+  price: 2590,
+  size_url: "size-g.png"
   })
 
 

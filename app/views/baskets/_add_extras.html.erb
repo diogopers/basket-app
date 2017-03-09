@@ -49,7 +49,7 @@
           <div class="quantity">
             <ul class="list-inline">
               <li data-id="<%=extra.id%>" class="remove-item"><h4>-</h4></li>
-              <li><h4 class="quantity-display"> <%= extra.extra_orders.find_by(order_id: session[:order_id]).quantity %> </h4></li>
+              <li><h4 class="quantity-display"> <%#= extra.extra_orders.find_by(order_id: session[:order_id]).quantity %> </h4></li>
               <li data-id="<%=extra.id%>" class="add-item"><h4>+</h4></li>
             </ul>
           </div>
