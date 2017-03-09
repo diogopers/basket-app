@@ -6,7 +6,13 @@ class BasketsController < ApplicationController
   def new
 
 #     session.delete(:order_id)
-    @order = Order.find(session[:order_id])
+    if @order.present?
+      @order = Order.find(session[:order_id])
+    else
+      @order = Order.new
+    end
+
+    @basket = Basket.new
     @producers = Producer.all
     @extras = Extra.all
     @baskets = Basket.all
