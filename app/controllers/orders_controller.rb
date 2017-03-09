@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: :create
 
+
   def create
     @basket = Basket.find_by(category: basket_params[:category],
                              size:     basket_params[:size])
@@ -16,6 +17,16 @@ class OrdersController < ApplicationController
       session[:order_id] = @order.id
     end
 
+  end
+
+  def show
+    @order = Order.find(session[:order_id])
+    respond_to do |format|
+      format.js {
+             render :template => "orders/show.js.erb",
+             :layout => false
+          }
+    end
   end
 
   private

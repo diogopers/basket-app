@@ -1,3 +1,8 @@
+<%= form_tag('/order', remote: true, method: :get) do %>
+  <%= submit_tag "Go to checkout", id: "submit-btn-checkout", class: "hidden" %>
+<% end %>
+
+
 <div class="cart-footer hidden" id="footer-cart">
 
   <div class="your-basket">

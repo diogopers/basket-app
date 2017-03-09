@@ -4,6 +4,8 @@ class BasketsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def new
+    session.delete(:order_id)
+
     @basket = Basket.new
     @producers = Producer.all
     @extras = Extra.all
@@ -25,10 +27,10 @@ class BasketsController < ApplicationController
     end
   end
 
-  # private
+  private
 
-  # def basket_params
-  #   params.require(:basket).permit(:size, :type)
-  # end
+  def basket_params
+    params.require(:basket).permit(:size, :type)
+  end
 
 end

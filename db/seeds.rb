@@ -16,55 +16,64 @@ Basket.create! ({
   size: "small",
   category: "fruits",
   price: 1290,
-  size_url: "size-s.png"
+  size_url: "size-s.png",
+  category_url: "fruits.jpg"
   })
 Basket.create! ({
   size: "medium",
   category: "fruits",
   price: 2090,
-  size_url: "size-m.png"
+  size_url: "size-m.png",
+  category_url: "fruits.jpg"
   })
 Basket.create! ({
   size: "large",
   category: "fruits",
   price: 2590,
-  size_url: "size-s.png"
+  size_url: "size-g.png",
+  category_url: "fruits.jpg",
   })
 Basket.create! ({
   size: "small",
   category: "vegetables",
   price: 1290,
-  size_url: "size-g.png"
+  size_url: "size-s.png",
+  category_url: "vegetables.jpg"
   })
 Basket.create! ({
   size: "medium",
   category: "vegetables",
   price: 2090,
-  size_url: "size-m.png"
+  size_url: "size-m.png",
+  category_url: "vegetables.jpg"
   })
 Basket.create! ({
   size: "large",
   category: "vegetables",
   price: 2590,
-  size_url: "size-g.png"
+  size_url: "size-g.png",
+  category_url: "vegetables.jpg"
   })
 Basket.create! ({
   size: "small",
   category: "both",
   price: 1290,
-  size_url: "size-s.png"
+  size_url: "size-s.png",
+  category_url: "fruitsvegetables.jpg"
   })
 Basket.create! ({
   size: "medium",
   category: "both",
   price: 2090,
-  size_url: "size-m.png"
+  size_url: "size-m.png",
+  category_url: "fruitsvegetables.jpg"
   })
 Basket.create! ({
   size: "large",
   category: "both",
   price: 2590,
-  size_url: "size-g.png"
+  size_url: "size-g.png",
+  category_url: "fruitsvegetables.jpg"
   })
 
 
