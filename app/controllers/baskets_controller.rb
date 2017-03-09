@@ -5,12 +5,11 @@ class BasketsController < ApplicationController
 
   def new
 
+#     session.delete(:order_id)
     @order = Order.find(session[:order_id])
-
     @producers = Producer.all
     @extras = Extra.all
     @baskets = Basket.all
-
     @extra_order = ExtraOrder.new
     @extra_orders = ExtraOrder.where(order_id: session[:order_id])
   end
@@ -27,10 +26,10 @@ class BasketsController < ApplicationController
     end
   end
 
-  # private
+  private
 
-  # def basket_params
-  #   params.require(:basket).permit(:size, :type)
-  # end
+  def basket_params
+    params.require(:basket).permit(:size, :type)
+  end
 
 end

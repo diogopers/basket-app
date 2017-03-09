@@ -8,6 +8,7 @@ DeliveryPoint.destroy_all
 Basket.create! ({
   size: "small",
   category: "fruits",
+  category_url: "fruits.jpg",
   price_cents: 1290,
   size_url: "size-s.png"
 
@@ -15,6 +16,7 @@ Basket.create! ({
 Basket.create! ({
   size: "medium",
   category: "fruits",
+  category_url: "fruits.jpg",
   price_cents: 2090,
   size_url: "size-m.png"
 
@@ -22,46 +24,55 @@ Basket.create! ({
 Basket.create! ({
   size: "large",
   category: "fruits",
+  category_url: "fruits.jpg",
   price_cents: 2590,
   size_url: "size-s.png"
   })
+
 Basket.create! ({
   size: "small",
   category: "vegetables",
+  category_url: "vegetables.jpg",
   price_cents: 1290,
   size_url: "size-g.png"
   })
+
 Basket.create! ({
   size: "medium",
   category: "vegetables",
+  category_url: "vegetables.jpg",
   price_cents: 2090,
   size_url: "size-m.png"
-
   })
+
 Basket.create! ({
   size: "large",
   category: "vegetables",
+  category_url: "vegetables.jpg",
   price_cents: 2590,
   size_url: "size-g.png"
-
   })
+
 Basket.create! ({
   size: "small",
   category: "both",
+  category_url: "fruitsvegetables.jpg",
   price_cents: 1290,
   size_url: "size-s.png"
-
   })
+
 Basket.create! ({
   size: "medium",
   category: "both",
-  price_cents: 2090,
-  size_url: "size-m.png"
-
+  category_url: "fruitsvegetables.jpg",
+  size_url: "size-m.png",
+  price_cents: 2090
   })
+
 Basket.create! ({
   size: "large",
   category: "both",
+  category_url: "fruitsvegetables.jpg",
   price_cents: 2590,
   size_url: "size-g.png"
   })

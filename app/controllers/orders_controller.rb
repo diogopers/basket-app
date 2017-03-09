@@ -20,6 +20,16 @@ class OrdersController < ApplicationController
 
   end
 
+  def show
+    @order = Order.find(session[:order_id])
+    respond_to do |format|
+      format.js {
+             render :template => "orders/show.js.erb",
+             :layout => false
+          }
+    end
+  end
+
   private
   def basket_params
     params.require(:basket).permit(:category, :size, :size_url)
