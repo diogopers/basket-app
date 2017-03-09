@@ -25,13 +25,13 @@ Basket.create! ({
   size_url: "size-m.png"
   })
 Basket.create! ({
-  size: "small",
+  size: "large",
   category: "fruits",
   price: 2590,
   size_url: "size-s.png"
   })
 Basket.create! ({
-  size: "large",
+  size: "small",
   category: "vegetables",
   price: 1290,
   size_url: "size-g.png"

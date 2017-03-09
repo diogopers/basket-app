@@ -4,8 +4,7 @@
   <%= form.button :submit, :style => "display: none;" %>
 <% end %>
 
-
-
+<div class="container text-center">
 <!-- FILTER -->
   <div class="filter">
     <h4>Filter by category</h4>
@@ -49,7 +48,7 @@
           <div class="quantity">
             <ul class="list-inline">
               <li data-id="<%=extra.id%>" class="remove-item"><h4>-</h4></li>
-              <li><h4 class="quantity-display"> <%#= extra.extra_orders.find_by(order_id: session[:order_id]).quantity %> </h4></li>
+              <li><%= render 'extra_orders/qtd_counter', quantity: initial_quantity(extra), extra: extra %></li>
               <li data-id="<%=extra.id%>" class="add-item"><h4>+</h4></li>
             </ul>
           </div>
@@ -82,6 +81,7 @@
 
     <% end %>
   </div>
+</div>
 
 
 

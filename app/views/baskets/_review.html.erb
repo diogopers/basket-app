@@ -1,88 +1,90 @@
-<div class="container select" >
-  <div class="row">
-    <div class="col-md-12 ">
-      <h2><i class="fa fa-shopping-basket" aria-hidden="true"></i>   Review and update your order</h2>
-    </div>
-  </div>
-  <div class="row ">
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-4 row-cart ">
-          <%= @order %>
-          <!-- <h5><%#= @basket.size %> BASKET <%#= image_tag @basket.size_url  %></h5> -->
-        </div>
+<div class="container text-center">
+  <div class="select" >
+    <div class="row">
+      <div class="col-md-12 ">
+        <h2><i class="fa fa-shopping-basket" aria-hidden="true"></i>   Review and update your order</h2>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-            <div class="cart-card-basket">
-            <%= image_tag "vegetables.jpg" %>
-            </div>
+    </div>
+
+    <div class="row ">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-4 row-cart ">
+            <h5>SMALL BASKET</h5>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-8">
-          <div class="review">
-            <p>With Fruits and vegetables, delivered weekly.</p>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+              <div class="cart-card-basket">
+              <%= image_tag "vegetables.jpg" %>
+              </div>
+          </div>
+          <div class="col-xs-12 col-sm-8">
+            <div class="review">
+              <p>With Fruits and vegetables, delivered weekly.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <hr>
+    <br>
+    <hr>
 
-  <div class="row ">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-4 row-cart ">
-          <h5>EXTRAS</h5>
+    <div class="row ">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4 row-cart ">
+            <h5>EXTRAS</h5>
+          </div>
         </div>
-      </div>
-      <div class="row ">
-            <div class="cart-card-extras">
-            <ul class="list-inline">
-            <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-            <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-            <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-            <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-            <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-            <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-            </ul>
-            </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <hr>
-
-  <div class="row ">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-8 row-cart ">
-          <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h5>
-        </div>
-      </div>
-      <div class="row ">
-            <div class="cart-card-producers">
+        <div class="row ">
+              <div class="cart-card-extras">
               <ul class="list-inline">
-                <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Madalena</li>
-                <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Francisquinho</li>
+              <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
+              <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
+              <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
+              <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
+              <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
+              <li><%= render 'baskets/cart_card'%><i class="fa fa-trash-o" aria-hidden="true"></i></li>
               </ul>
-            </div>
+              </div>
+        </div>
       </div>
     </div>
-  </div>
-  <br>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4"></div>
-    <div class="col-xs-12 col-sm-8">
-      <div class="review-total" id="total-button">
-        <div class="review-price">
-          <h3>TOTAL $123.99</h3>
-        </div>
+    <br>
+    <hr>
 
-        <div class="review-order" id="submit-order">
-          <p>SUBMIT<p>
-          <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
+    <div class="row ">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8 row-cart ">
+            <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h5>
+          </div>
+        </div>
+        <div class="row ">
+              <div class="cart-card-producers">
+                <ul class="list-inline">
+                  <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Madalena</li>
+                  <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Francisquinho</li>
+                </ul>
+              </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4"></div>
+      <div class="col-xs-12 col-sm-8">
+        <div class="review-total" id="total-button">
+          <div class="review-price">
+            <h3>TOTAL $123.99</h3>
+          </div>
+
+          <div class="review-order" id="submit-order">
+            <p>SUBMIT</p>
+            <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
     </div>
