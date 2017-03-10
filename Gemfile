@@ -17,6 +17,8 @@ gem 'geocoder'
 gem 'coffee-rails'
 gem 'gmaps4rails'
 
+gem 'hover-rails'
+
 gem 'money-rails', '~> 1'
 gem 'stripe'
 
