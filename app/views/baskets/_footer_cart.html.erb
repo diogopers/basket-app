@@ -3,7 +3,7 @@
 <% end %>
 
 
-<div class="cart-footer hidden" id="footer-cart">
+<div class="cart-footer" id="footer-cart">
 
   <div class="your-basket">
     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
@@ -13,20 +13,10 @@
 
 
   <div class="horizontal-scroll">
-      <%= render 'baskets/mini_card', order: @order %>
+    <!-- <i class="fa fa-angle-left" aria-hidden="true"></i> -->
+    <%= render 'baskets/mini_card', order: @order %>
+    <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
   </div>
 
-  <div class="total">
-    <div class="price">
-      <p>TOTAL<p>
-       <h3> 0 </h3>
-    </div>
-
-
-    <div class="review-order" id="review-footer-button">
-      <p>CHECKOUT<p>
-      <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
-    </div>
-
-  </div>
+  <div id="total"><%= render 'extra_orders/total_price' %></div>
 </div>

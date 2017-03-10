@@ -1,2 +1,3 @@
 $("#qtd-<%= @extra_order.extra.id %>").html("<%= j render 'extra_orders/qtd_counter', extra: @extra_order.extra, quantity: @extra_order.quantity %>");
 $("#mini-card-cart").html("<%= j render 'baskets/mini_card', order: @order %>");
+$("#total").html("<%= j render 'extra_orders/total_price', order: @order %>");

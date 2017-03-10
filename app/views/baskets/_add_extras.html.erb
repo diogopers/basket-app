@@ -1,11 +1,9 @@
-<%= simple_form_for(@extra_order, :url => extra_orders_path, :method => :post, remote: true) do |form| %>
+<%= simple_form_for(extra_order, :url => extra_orders_path, :method => :post, remote: true) do |form| %>
   <%= form.input :order_id, as: :hidden, :input_html => { value: session[:order_id] } %>
   <%= form.input :extra_id, as: :hidden, :input_html => { :id => "extra_id" } %>
   <%= form.input :action_cart, as: :hidden, :input_html => { :id => "action_cart" } %>
   <%= form.button :submit, :style => "display: none;" %>
 <% end %>
-
-
 
 
 <div class="container text-center">
@@ -24,9 +22,7 @@
 
 
   <div class="row">
-    <% @extras.each do |extra| %>
-
-
+    <% extras.each do |extra| %>
 
       <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
         <div class="card-container pointer">
