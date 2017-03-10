@@ -2,9 +2,9 @@
   background-color: $dark-yellow;
   color: white;
   border-radius: 5px;
-  float: right;
-  display: inline;
-  width:100%;
+  // float: right;
+  // display: inline;
+  // width:100%;
   padding: 5px;
   font-family: 'Dosis', sans-serif;
   font-weight: 700;
@@ -12,6 +12,33 @@
 }
 
 .review-price {
-  float: left;
-  padding: 5%;
+  // float: left;
+  padding: 2%;
+
 }
+
+.review-price p {
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+
+.review-price h3 {
+  margin: 0px;
+  font-weight: 700;
+}
+
+.review-order-total {
+  text-align: center;
+  padding: 2%;
+  color: $dark-green;
+  display: block;
+}
+
+.review-order-total h5 {
+  font-weight: 700;
+  font-size: 1em;
+  padding:2%;
+}
+
+
