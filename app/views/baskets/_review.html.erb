@@ -59,16 +59,27 @@
             <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h5>
           </div>
         </div>
-        <div class="row ">
-              <div class="cart-card-producers">
-                <ul class="list-inline">
-                  <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Madalena</li>
-                  <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Francisquinho</li>
-                </ul>
-              </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cart-card-producers">
+              <ul class="list-inline">
+                <% uniq_producers(order.extra_orders).each do |producer| %>
+                    <li >
+                      <div>
+                        <%= cl_image_tag producer.photo.url, class: "avatar" %>
+                        <%= producer.name %>
+                      </div>
+                    </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+
+
     <br>
     <hr>
     <div class="row">
