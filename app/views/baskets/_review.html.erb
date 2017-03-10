@@ -6,6 +6,7 @@
       </div>
     </div>
 
+
     <div class="row ">
       <div class="col-md-8">
         <div class="row">
@@ -28,8 +29,11 @@
         </div>
       </div>
     </div>
+
+
     <br>
     <hr>
+
 
     <div class="row ">
       <div class="col-md-12">
@@ -42,15 +46,27 @@
           <div class="cart-card-extras">
             <ul class="list-inline">
               <% order.extra_orders.each do |extra_order| %>
-                <li> <%= image_tag extra_order.extra.photo %> <i class="fa fa-trash-o" aria-hidden="true"></i> </li>
+                <li>
+                  <div class="cart-card-container">
+                  <%#= render 'extra_orders/badge_counter', extra_order: extra_order %>
+                    <div id="qtd-badge-<%= extra_order.extra.id %>" class="badge badge-green"> <%= extra_order.quantity %>
+                    </div>
+                    <%= image_tag extra_order.extra.photo, class: "review-extras" %>
+                    <a class="card-link" href="#" ></a>
+                  </div>
+                </li>
+
               <% end %>
-              </ul>
-              </div>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
+
     <br>
     <hr>
+
 
     <div class="row ">
       <div class="col-md-12">
@@ -59,18 +75,31 @@
             <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h5>
           </div>
         </div>
-        <div class="row ">
-              <div class="cart-card-producers">
-                <ul class="list-inline">
-                  <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Madalena</li>
-                  <li><img class="avatar dropdown-toggle" src="http://placehold.it/30x30" alt="Producer name"> Francisquinho</li>
-                </ul>
-              </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cart-card-producers">
+              <ul class="list-inline">
+                <% uniq_producers(order.extra_orders).each do |producer| %>
+                    <li >
+                      <div>
+                        <%= cl_image_tag producer.photo.url, class: "avatar" %>
+                        <%= producer.name %>
+                      </div>
+                    </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+
+
     <br>
     <hr>
+
+
     <div class="row">
       <div class="col-xs-12 col-sm-4"></div>
       <div class="col-xs-12 col-sm-8">
@@ -86,5 +115,7 @@
         </div>
       </div>
     </div>
+
+
   </div>
 </div>

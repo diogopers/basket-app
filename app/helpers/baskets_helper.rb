@@ -13,4 +13,12 @@ module BasketsHelper
       0
     end
   end
+
+  def uniq_producers(extra_orders)
+    producers = []
+    extra_orders.each do |extra_order|
+      producers << extra_order.extra.producer
+    end
+    producers.uniq!
+  end
 end
