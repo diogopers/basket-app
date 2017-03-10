@@ -29,5 +29,4 @@ module BasketsHelper
     end
     sum
   end
-
 end

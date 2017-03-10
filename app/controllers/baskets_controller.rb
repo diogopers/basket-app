@@ -22,6 +22,7 @@ class BasketsController < ApplicationController
   private
 
   def set_delivery_points
+    @order = Order.find(session[:order_id])
     @delivery_points = DeliveryPoint.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@delivery_points) do |delivery_point, marker|

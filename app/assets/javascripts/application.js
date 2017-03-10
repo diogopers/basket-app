@@ -29,6 +29,11 @@ $(function(){
     $("#submit-btn-checkout").click();
   });
 
+  $("#basket-review-order").on("click", '#submit-order', function(e){
+    $("#menu-op-5").click();
+    // $("#submit-btn-checkout").click();
+  });
+
   $("#addextras").on("click", '.card-wrapper', function(e){
     $("#extra_id").val(($(this).data("id")));
     $("#action_cart").val("increase");
@@ -53,17 +58,6 @@ $(function(){
     // qtd.text(parseInt(qtd.text()) - 1)
   });
 
-  function decreaseCounter() {}
-
-  function increaseCounter() {}
-
-  function destroyObject() {
-    $("#destroy_extra_order").submit();
-  }
-
-
-
-
 
   $("#basket-review-order").on("click", "#submit-order",function(e){
     console.log("menu-op-5")
@@ -71,6 +65,8 @@ $(function(){
 
 
   });
+
+
   $(".tab").on("click", function(e){
     // Change active tab
     var activetab = $(".active");
@@ -82,6 +78,7 @@ $(function(){
     var target = $(this).data('target');
     $(target).removeClass('hidden');
   });
+
   $("#menu-op-3").on("click", function(e){
     $("#footer-cart").removeClass('hidden');
   })

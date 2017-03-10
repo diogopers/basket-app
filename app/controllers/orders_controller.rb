@@ -40,9 +40,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def set_address
+    @order = Order.find(session[:order_id])
+    @order.delivery_point = DeliveryPoint.find(params[:order][:delivery_point])
+    @order.save
+  end
+
   private
   def basket_params
     params.require(:basket).permit(:category, :size, :size_url)
+  end
+
+  def order_params
+    params.require(:order).permit(:delivery_point_id)
   end
 
 end
