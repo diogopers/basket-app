@@ -1,3 +1,8 @@
+.debug {
+  border: 1px solid red;
+
+}
+
 .cart-footer {
     position: fixed;
     height: 100px;
@@ -27,7 +32,7 @@
 .horizontal-scroll {
   width: 65%;
   overflow-x: auto;
-  white-space: nowrap;
+  // white-space: nowrap;
   float: left;
   // border-left: 4px solid $gray;
   // border-right:4px solid $gray;
