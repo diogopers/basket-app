@@ -192,6 +192,7 @@
               internal: { id: 'map' } }, function() {
               markers = handler.addMarkers(<%= raw @hash.to_json %>);
               handler.bounds.extendWith(markers);
+
               if (markers.length == 0) {
                 handler.getMap().setZoom(2);
               } else if (markers.length == 1) {
@@ -199,14 +200,17 @@
               }
 
 
-              handler.fitMapToBounds();
               $('#address').addClass('hidden');
+
+              handler.fitMapToBounds();
+
+
+
 
             });
 
             var input = document.getElementById('address_field');
-            var options = {
-            };
+            var options = {};
 
             autocomplete = new google.maps.places.Autocomplete(input, options);
 
@@ -215,6 +219,7 @@
                 handler.getMap().panTo(place.geometry.location);
                 handler.getMap().setZoom(14);
             })
+
 
 
 

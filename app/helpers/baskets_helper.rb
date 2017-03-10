@@ -21,4 +21,13 @@ module BasketsHelper
     end
     producers.uniq!
   end
+
+  def sum_extras
+    sum = 0
+    @order.extra_orders.each do |extra_order|
+      sum += extra_order.quantity * extra_order.extra.price
+    end
+    sum
+  end
+  
 end

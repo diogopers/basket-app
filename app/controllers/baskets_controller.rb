@@ -4,7 +4,6 @@ class BasketsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def new
-
 #     session.delete(:order_id)
     if @order.present?
       @order = Order.find(session[:order_id])
@@ -28,6 +27,7 @@ class BasketsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@delivery_points) do |delivery_point, marker|
       marker.lat delivery_point.latitude
       marker.lng delivery_point.longitude
+      marker.infowindow render_to_string(partial: "/delivery_points/map_box", :formats => [:html], locals: { delivery_point: delivery_point })
       # marker.infowindow render_to_string(partial: "/delivery_points/map_box", locals: { flat: flat })
     end
   end
