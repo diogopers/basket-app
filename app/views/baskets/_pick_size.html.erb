@@ -4,30 +4,33 @@
   <%= form.button :submit, :type => :hidden %>
 <% end %>
 
-<div class="container" id="pick-size">
-  <h2>Pick the size of your Basket</h2>
-  <div class="row" id="basket-size">
-  '
-    <div data-size="small" class="basket-size">
-      <div  class="col-sm-4 col-xs-12" class="">
-        <%= image_tag "size-s.png" %>
-        <h5>Small</h5>
-      </div>
-    </div>
+<div class="container text-center">
+  <div class="select" id="pick-size">
 
-    <div data-size="medium" class="basket-size">
-      <div data-size="medium" class="col-sm-4 col-xs-12">
-        <%= image_tag "size-m.png" %>
-        <h5>Regular</h5>
-      </div>
-    </div>
+    <h2>Pick the size of your Basket</h2>
+    <div class="row" id="basket-size">
 
-    <div data-size="large" class="basket-size">
-      <div data-size="large" class="col-sm-4 col-xs-12">
-        <%= image_tag "size-g.png" %>
-        <h5>Big</h5>
+      <div data-size="small" class="basket-size">
+        <div  class="col-sm-4 col-xs-12" class="">
+          <%= image_tag "size-s.png" %>
+          <h5>Small</h5>
+        </div>
       </div>
-    </div>
 
+      <div data-size="medium" class="basket-size">
+        <div data-size="medium" class="col-sm-4 col-xs-12">
+          <%= image_tag "size-m.png" %>
+          <h5>Regular</h5>
+        </div>
+      </div>
+
+      <div data-size="large" class="basket-size">
+        <div data-size="large" class="col-sm-4 col-xs-12">
+          <%= image_tag "size-g.png" %>
+          <h5>Big</h5>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>

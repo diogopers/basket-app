@@ -25,10 +25,12 @@
 }
 
 .horizontal-scroll {
-    width: 65%;
-    overflow-x: auto;
-    white-space: nowrap;
-    float: left;
+  width: 65%;
+  overflow-x: auto;
+  white-space: nowrap;
+  float: left;
+  // border-left: 4px solid $gray;
+  // border-right:4px solid $gray;
 }
 
 .horizontal-scroll li i {
@@ -36,7 +38,11 @@
     font-size: 1.2em;
 }
 
-.total {
+.horizontal-scroll li:last-child {
+  display: none;
+}
+
+#total {
   background-color: $dark-yellow;
   float: left;
   height: 100px;
@@ -73,8 +79,17 @@
   margin: 0px;
 }
 
+.fa-angle-right {
+  float: right;
+}
+
+.fa-angle-left {
+  float: left;
+}
+
 @media screen and (max-width: 878px) {
-    .total {
+
+    #total {
       height: 80px;
       width: 100%;
     }
@@ -97,7 +112,5 @@
         overflow-x: auto;
         white-space: nowrap;
     }
-
-
 }
 

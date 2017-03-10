@@ -1,7 +1,7 @@
-<div class="container">
+
   <%= render 'baskets/basket_menu' %>
 
-  <div class="container text-center">
+  <div class="padded text-center">
     <div class="tab-content" id="selectbasket">
       <%= render 'baskets/select' %>
     </div>
@@ -9,10 +9,12 @@
       <%= render 'baskets/pick_size' %>
     </div>
     <div class="tab-content hidden" id="addextras">
-      <%= render 'baskets/add_extras' %>
+      <div id="basket-add-extras"></div>
+      <%#= render 'baskets/add_extras' %>
     </div>
     <div class="tab-content hidden" id="revieworder">
-      <%= render 'baskets/review' %>
+      <div id="basket-review-order"></div>
+      <%#= render 'baskets/review', order:  %>
     </div>
     <div class="tab-content" id="address">
       <%= render 'baskets/address' %>
@@ -23,4 +25,8 @@
   </div>
 </div>
 
-<%= render 'baskets/footer_cart' %>
+<div id="cart-area">
+  <%# render 'baskets/footer_cart' %>
+</div>
+
+

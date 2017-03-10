@@ -1,0 +1,5 @@
+<%= form_for(@extra_order, :url => extra_orders_path(extra.extra_orders.find_by(order_id: session[:order_id])), :html => { :method => :delete, :remote => true }) do |form| %>
+  <%= form.text_field :order_id, as: :hidden, :input_html => { value: session[:order_id] }, :style => "display: none;" %>
+  <%= form.text_field :extra_id, as: :hidden, :input_html => { :id => "extra_id" }, :style => "display: none;" %>
+  <%= form.button :submit %>
+<% end %>

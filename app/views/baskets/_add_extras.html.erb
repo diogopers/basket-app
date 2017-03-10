@@ -1,28 +1,34 @@
-<div class="container">
+<%= simple_form_for(extra_order, :url => extra_orders_path, :method => :post, remote: true) do |form| %>
+  <%= form.input :order_id, as: :hidden, :input_html => { value: session[:order_id] } %>
+  <%= form.input :extra_id, as: :hidden, :input_html => { :id => "extra_id" } %>
+  <%= form.input :action_cart, as: :hidden, :input_html => { :id => "action_cart" } %>
+  <%= form.button :submit, :style => "display: none;" %>
+<% end %>
+
+
+<div class="container text-center">
+<!-- FILTER -->
   <div class="filter">
-
     <h4>Filter by category</h4>
-
-
     <%= form_tag root_path, method: :get, :class => "form-inline checkbox-circle checkbox-primary" do %>
-
       <%= label_tag "dairy", raw("#{check_box_tag('dairy')} Dairy") %>
       <%= label_tag "bakery", raw("#{check_box_tag('bakery')} Bakery") %>
       <%= label_tag "beverage", raw("#{check_box_tag('beverage')} Baverage") %>
       <%= label_tag "ingredients", raw("#{check_box_tag('ingredients')} Ingredients") %>
-
     <% end %>
   </div>
+<!-- END FILTER -->
+
+
 
   <div class="row">
-    <% @extras.each do |extra| %>
+    <% extras.each do |extra| %>
+
       <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
-        <div class="card-container">
-          <div class="card-wrapper">
+        <div class="card-container pointer">
+          <div data-id="<%=extra.id%>" class="card-wrapper">
 
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://vitalvedaaus.files.wordpress.com/2016/10/olive-oil-wood.jpg')">
-
-
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra.photo, crop: :fill %>')">
 
               <%= cl_image_tag extra.producer.photo.url, class: "card-user avatar pointer",
                        "data-toggle" => "modal", "data-target" => "#modal-#{extra.producer_id}" %>
@@ -34,7 +40,7 @@
 
 
               <div class="card-price">
-                <h3> $<%= extra.price %> </h3>
+                <h3> <%= humanized_money_with_symbol(extra.price) %> </h3>
               </div>
           </div>
 
@@ -44,9 +50,9 @@
 
           <div class="quantity">
             <ul class="list-inline">
-              <li><h4>-</h4></li>
-              <li><h4>2</h4></li>
-              <li><h4>+</h4></li>
+              <li data-id="<%=extra.id%>" class="remove-item"><h4>-</h4></li>
+              <li><%= render 'extra_orders/qtd_counter', quantity: initial_quantity(extra), extra: extra %></li>
+              <li data-id="<%=extra.id%>" class="add-item"><h4>+</h4></li>
             </ul>
           </div>
 
