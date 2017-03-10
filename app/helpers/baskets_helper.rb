@@ -19,7 +19,7 @@ module BasketsHelper
     extra_orders.each do |extra_order|
       producers << extra_order.extra.producer
     end
-    producers.uniq!
+    producers.uniq
   end
 
   def sum_extras
@@ -29,5 +29,5 @@ module BasketsHelper
     end
     sum
   end
-  
+
 end

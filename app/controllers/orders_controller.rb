@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: :create
+  skip_before_action :authenticate_user!, only: [:create, :show]
 
   # @order = Order.find(session[:order_id])
 
