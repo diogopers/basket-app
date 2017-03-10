@@ -2,9 +2,19 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: absolute;
+}
+  .btn {
+    width: 100%;
+  }
+
+#map {
+  position: relative;
+  width: 400px;
 }
 
 .location {
+  position: relative;
   text-align: left;
   background: white;
   padding: 10px 20px;
@@ -21,12 +31,5 @@
     color: $green;
     margin-top: 5px;
     font-family: "Dosis", sans-serif;
-  }
-  p {
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-  .btn {
-    width: 100%;
   }
 }
