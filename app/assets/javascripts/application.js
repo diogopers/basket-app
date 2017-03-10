@@ -65,9 +65,11 @@ $(function(){
 
 
 
-  $("#submit-order").on("click", function(e){
+  $("#basket-review-order").on("click", "#submit-order",function(e){
     console.log("menu-op-5")
     $("#menu-op-5").click();
+
+
   });
   $(".tab").on("click", function(e){
     // Change active tab
