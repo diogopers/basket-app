@@ -1,7 +1,6 @@
 class ExtraOrdersController < ApplicationController
   respond_to :html, :js
 
-
   def create
     @extra_order = ExtraOrder.where( order_id: session[:order_id],
                                      extra_id: params[:extra_order][:extra_id] ).first

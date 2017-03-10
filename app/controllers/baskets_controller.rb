@@ -4,7 +4,6 @@ class BasketsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def new
-
 #     session.delete(:order_id)
     if @order.present?
       @order = Order.find(session[:order_id])
