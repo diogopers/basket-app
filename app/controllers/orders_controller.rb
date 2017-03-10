@@ -44,6 +44,12 @@ class OrdersController < ApplicationController
     @order = Order.find(session[:order_id])
     @order.delivery_point = DeliveryPoint.find(params[:order][:delivery_point])
     @order.save
+    respond_to do |format|
+      format.js {
+             render :template => "orders/confirmation.js.erb",
+             :layout => false
+          }
+    end
   end
 
   private

@@ -34,6 +34,10 @@ $(function(){
     // $("#submit-btn-checkout").click();
   });
 
+  $("#address").on("click", '.set-address', function(e){
+    $("#menu-op-6").click();
+  });
+
   $("#addextras").on("click", '.card-wrapper', function(e){
     $("#extra_id").val(($(this).data("id")));
     $("#action_cart").val("increase");
