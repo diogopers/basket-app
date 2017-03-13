@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :show]
+  skip_before_action :authenticate_user!, only: [:create, :show, :review, :pick_address]
+  # before_action :authenticate_user!, only: :pick_address
   before_action :set_delivery_points, only: :pick_address
+
+
 
   # @order = Order.find(session[:order_id])
 
@@ -12,13 +15,11 @@ class OrdersController < ApplicationController
     if session[:order_id].present?
       @order = Order.find(session[:order_id])
       @order.basket = @basket
+      @order.state = "pending"
     else
       @order = @basket.orders.new
-      @order.status = "first step"
+      @order.state = "pending"
     end
-
-    p @order.errors
-    p @order.valid?
 
     if @order.save!
       session[:order_id] = @order.id
@@ -34,7 +35,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  def show
+  def review
     @order = Order.find(session[:order_id])
     respond_to do |format|
       format.js {
@@ -44,22 +45,42 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.where(state: 'paid').find(params[:id])
+  end
+
   def pick_address
-    if session[:order_id].present?
-    @order = Order.find(session[:order_id])
+    if user_signed_in?
+
+      @order = Order.find(session[:order_id])
+      @basket = Basket.new
+      @producers = Producer.all
+      @extras = Extra.all
+      @baskets = Basket.all
+      @extra_order = ExtraOrder.new
+      @extra_orders = ExtraOrder.where(order_id: session[:order_id])
+
+      respond_to do |format|
+        # format.html {
+        #             render :template => "baskets/new.html.erb",
+        #             :layout => true
+        # }
+        format.js {
+                    render :template => "baskets/pick_address.js.erb",
+                    :layout => false
+            }
+      end
+    else
+      # redirect_to new_user_session_path
+      render :js => "window.location = '#{new_user_session_path}'"
     end
 
-    respond_to do |format|
-      format.js {
-                  render :template => "baskets/pick_address.js.erb",
-                  :layout => false
-          }
-    end
   end
 
   def set_address
     @order = Order.find(session[:order_id])
     @order.delivery_point = DeliveryPoint.find(params[:order][:delivery_point])
+    @order.amount = @order.basket.price + sum_extras
     @order.save
 
     respond_to do |format|
@@ -94,6 +115,14 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:delivery_point_id)
+  end
+
+  def sum_extras
+    sum = 0
+    @order.extra_orders.each do |extra_order|
+      sum += extra_order.quantity * extra_order.extra.price
+    end
+    sum
   end
 
 end

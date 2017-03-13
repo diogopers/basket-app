@@ -23,19 +23,12 @@ $(function(){
 
   });
 
-  $("#cart-area").on("click", '#review-footer-button', function(e){
+  $("#basket-footer").on("click", '.review-order', function(e){
     $("#menu-op-4").click();
-    $("#footer-cart").addClass('hidden');
-    $("#submit-btn-checkout").click();
   });
 
   $("#basket-review-order").on("click", '#submit-order', function(e){
     $("#menu-op-5").click();
-    // $.ajax({
-    //       type: "GET",
-    //       url: "/orders/<%= @order.id %>/pick_address"
-    //     });
-    // $("#submit-btn-checkout").click();
   });
 
   $("#address").on("click", '.set-address', function(e){
@@ -67,12 +60,6 @@ $(function(){
   });
 
 
-  $("#basket-review-order").on("click", "#submit-order",function(e){
-    console.log("menu-op-5")
-    $("#menu-op-5").click();
-
-
-  });
 
 
   $(".tab").on("click", function(e){

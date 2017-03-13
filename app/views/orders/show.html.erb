@@ -2,26 +2,29 @@
   <div class="select" >
     <div class="row">
       <div class="col-md-12 ">
-        <h2><i class="fa fa-shopping-basket" aria-hidden="true"></i>   Review and update your order</h2>
+        <h2><i class="fa fa-shopping-basket" aria-hidden="true"></i>   Your order was place succesfully</h2>
       </div>
     </div>
 
-<!-- display basket choice -->
-    <div class="row ">
-      <div class="col-sm-12 padded">
 
+    <div class="row ">
+      <div class="col-md-8">
         <div class="row">
-            <div class="col-xs-12 col-sm-4">
-                <div >
-                <%= image_tag order.basket.category_url, class: "cart-card-basket" %>
-                </div>
-            </div>
-            <div class="vertical-aligned">
-              <div class="col-xs-12 col-sm-8">
-                <div class="review">
-                  <h4><%= image_tag order.basket.size_url, class: "avatar-basket-size" %> &nbsp;&nbsp;<%= order.basket.size.upcase %> BASKET WITH <%= order.basket.category.upcase %>, DELIVERED WEEKLY.</h4>
-                </div>
+          <div class="col-md-4 row-cart ">
+            <%= image_tag @order.basket.size_url, class: "avatar-basket-size" %> &nbsp;&nbsp;<h5><%= @order.basket.size.upcase %> BASKET</h5>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+              <div class="cart-card-basket">
+              <%= image_tag @order.basket.category_url %>
               </div>
+          </div>
+          <div class="col-xs-12 col-sm-8">
+            <div class="review">
+              <h5>WITH <%= @order.basket.category.upcase %>, DELIVERED WEEKLY.</h5>
+            </div>
           </div>
         </div>
       </div>
@@ -31,18 +34,18 @@
     <br>
     <hr>
 
-<!-- display extras -->
+
     <div class="row ">
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-4 row-cart ">
-            <h4>EXTRAS</h4>
+            <h5>EXTRAS</h5>
           </div>
         </div>
         <div class="row ">
           <div class="cart-card-extras">
             <ul class="list-inline">
-              <% order.extra_orders.each do |extra_order| %>
+              <% @order.extra_orders.each do |extra_order| %>
                 <li>
                   <div class="cart-card-container">
                   <%#= render 'extra_orders/badge_counter', extra_order: extra_order %>
@@ -64,19 +67,19 @@
     <br>
     <hr>
 
-<!-- display producers -->
+
     <div class="row ">
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-8 row-cart ">
-            <h4>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h4>
+            <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h5>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-12">
             <div class="cart-card-producers">
               <ul class="list-inline">
-                <% uniq_producers(order.extra_orders).each do |producer| %>
+                <% uniq_producers(@order.extra_orders).each do |producer| %>
                     <li >
                       <div>
                         <%= cl_image_tag producer.photo.url, class: "avatar" %>
@@ -95,7 +98,7 @@
     <br>
     <hr>
 
-<!-- display total -->
+
     <div class="row">
       <div class="col-xs-12 col-sm-8"></div>
       <div class="col-xs-12 col-sm-4">
@@ -106,12 +109,6 @@
                 <p>TOTAL<p>
                  <h3> <%= humanized_money_with_symbol(@order.basket.price + sum_extras) %> </h3>
               </div>
-            </div>
-            <div class="col-xs-6 col-sm-6">
-                <%= link_to "SUBMIT", pick_address_order_path(@order.id), method: :get, remote: true, id: "submit-order" %>
-                <!-- <h5>SUBMIT &nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i></h5> -->
-              </div>
-
             </div>
           </div>
         </div>

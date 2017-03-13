@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
     post 'set_address', on: :member
     get 'pick_address', on: :member
+    get 'review', on: :member
   end
-  
+
   get "order", to: "orders#show"
   resources :extra_orders, only: [:create, :update, :destroy]
 
@@ -21,5 +22,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
 
   root to: 'pages#home'
+
+  get '/sign-in' => "devise/sessions#new", :as => :login
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
