@@ -4,7 +4,6 @@
 
       <div id="map" style="width: 90%; height: 300px;"></div>
 
-      <% content_for(:after_js) do %>
         <%= javascript_tag do %>
 
 
@@ -200,8 +199,6 @@
               }
 
 
-              $('#address').addClass('hidden');
-
               handler.fitMapToBounds();
 
 
@@ -224,7 +221,6 @@
 
 
         <% end %>
-      <% end %>
 
     </div>
 
