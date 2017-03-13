@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :baskets, only: [:new, :create]
   resources :orders, only: [:new, :create, :update] do
     post 'set_address', on: :member
+    get 'pick_address', on: :member
   end
   get "order", to: "orders#show"
   resources :extra_orders, only: [:create, :update, :destroy]
