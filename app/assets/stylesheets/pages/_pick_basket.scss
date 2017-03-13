@@ -1,6 +1,6 @@
 .vegetables .description {
-  margin-top: 30px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 14px;
   visibility: hidden;
 }
 
@@ -9,8 +9,8 @@
 }
 
 .fruits .description {
-  margin-top: 30px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 14px;
   visibility: hidden;
 }
 
@@ -19,8 +19,8 @@
 }
 
 .vegetablesfruits .description {
-  margin-top: 30px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 14px;
   visibility: hidden;
 }
 
@@ -29,8 +29,8 @@
 }
 
 .small .description {
-  margin-top: 30px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 14px;
   visibility: hidden;
 }
 
@@ -39,8 +39,8 @@
 }
 
 .medium .description {
-  margin-top: 30px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 14px;
   visibility: hidden;
 }
 
@@ -49,11 +49,18 @@
 }
 
 .large .description {
-  margin-top: 30px;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 14px;
   visibility: hidden;
 }
 
 .large:hover .description {
  visibility: visible;
 }
+
+.container .select .btn {
+  margin-top: 30px;
+  margin-right: 14px;
+}
+
+
