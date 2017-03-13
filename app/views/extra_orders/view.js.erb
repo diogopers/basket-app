@@ -1,2 +1,3 @@
 $("#basket-add-extras").html("<%= j render 'baskets/add_extras', extras: @extras, extra_order: @extra_order %>");
-$("#cart-area").html("<%= j render 'baskets/footer_cart' %>");
+$("#basket-footer").html("<%= j render 'baskets/footer_cart', order: @order %>");
+

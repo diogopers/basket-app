@@ -4,7 +4,9 @@ class BasketsController < ApplicationController
   def new
 
 #     session.delete(:order_id)
-    if @order.present? && @order.id != nil
+    if current_user && session[:order_id]
+      @order = Order.find(session[:order_id])
+    elsif @order.present? && @order.id != nil
       @order = Order.find(session[:order_id])
     else
       @order = Order.new

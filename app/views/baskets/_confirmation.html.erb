@@ -1,38 +1,50 @@
 <div class="container select" id="pick-size">
   <h2>We’re almost there!</h2>
+
+<h1>Purchase of basket <%= @order.id %></h1>
+<%= form_tag order_payments_path(@order) do %>
+  <article>
+    <label class="amount">
+      <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="My Order"
+    data-email="<%= current_user.email %>"
+    data-amount="<%= @order.amount_cents %>"
+    data-currency="<%= @order.amount.currency %>"></script>
+
+<% end %>
+
+
+
+
+
+
   <div class="row ">
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-12 row-cart ">
-            <h4>PAYMENT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-credit-card-alt" aria-hidden="true"></i></h4>
           </div>
         </div>
-          <form class="payment">
-            <h5>Card number </h5>
-            <input class="form-control string" type="text" placeholder="0000 0000 0000 0000">
-            <h5>Name on the card</h5>
-            <input class="form-control string" type="text" placeholder="Madalena L. Pessanha">
-            <h5>Expiration date</h5>
-            <input class="form-control string" type="text" placeholder="mm/yy">
-            <h5>CSV</h5>
-            <input class="form-control string" type="text" placeholder="123">
-            <div class="review-total" id="total-button">
-                      <div class="row">
-                        <div class="col-xs-6 col-sm-6">
-                          <div class="review-price">
-                            <p>TOTAL<p>
-                             <h3> <%= humanized_money_with_symbol(@order.basket.price + sum_extras) %> </h3>
-                          </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6">
-                          <div class="review-order-total" id="submit-order">
-                            <h5>PLACE ORDER &nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i></h5>
+          <div class="review-total" id="total-button">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6">
+                <div class="review-price">
+                  <p>TOTAL<p>
+                   <h3> <%= humanized_money_with_symbol(@order.basket.price + sum_extras) %> </h3>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6">
+                <div class="review-order-total" id="submit-order">
+                  <h5>PLACE ORDER &nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i></h5>
 
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-          </form>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
 </div>
