@@ -3,6 +3,6 @@
   <br>
   <div class="delivery_point text-center"><%= delivery_point.address %></div>
   <br>
-  <%= link_to "Select this delivery point", "#", class: "btn btn-primary", aria_pressed: "true" %>
+  <%= link_to "Select this delivery point", "#?delivery_point=#{delivery_point.id}", class: "btn btn-primary", aria_pressed: "true" %>
 </div>
 

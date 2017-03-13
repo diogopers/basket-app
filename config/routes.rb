@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
 
   resources :baskets, only: [:new, :create]
-  resources :orders, only: [:new, :create, :update]
+  resources :orders, only: [:new, :create, :update, :show] do
+    resources :payments, only: [:new, :create]
+  end
   get "order", to: "orders#show"
   resources :extra_orders, only: [:create, :update, :destroy]
 
