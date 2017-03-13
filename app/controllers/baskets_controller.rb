@@ -52,7 +52,6 @@ class BasketsController < ApplicationController
       marker.infowindow render_to_string(partial: "/delivery_points/map_box", :formats => [:html], locals: { delivery_point: delivery_point })
       # marker.infowindow render_to_string(partial: "/delivery_points/map_box", locals: { flat: flat })
     end
-    end
   end
 
   private
