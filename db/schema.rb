@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310193113) do
+
+ActiveRecord::Schema.define(version: 20170313142008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +22,8 @@ ActiveRecord::Schema.define(version: 20170310193113) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "size_url"
-    t.string   "category_url"
     t.integer  "price_cents",  default: 0, null: false
+    t.string   "category_url"
   end
 
   create_table "delivery_points", force: :cascade do |t|
@@ -60,10 +61,13 @@ ActiveRecord::Schema.define(version: 20170310193113) do
     t.integer  "user_id"
     t.integer  "basket_id"
     t.float    "total"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "status"
     t.integer  "delivery_point_id"
+    t.string   "state"
+    t.integer  "amount_cents",      default: 0, null: false
+    t.json     "payment"
     t.index ["basket_id"], name: "index_orders_on_basket_id", using: :btree
     t.index ["delivery_point_id"], name: "index_orders_on_delivery_point_id", using: :btree
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree

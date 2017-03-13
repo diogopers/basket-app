@@ -31,6 +31,10 @@ $(function(){
 
   $("#basket-review-order").on("click", '#submit-order', function(e){
     $("#menu-op-5").click();
+    // $.ajax({
+    //       type: "GET",
+    //       url: "/orders/<%= @order.id %>/pick_address"
+    //     });
     // $("#submit-btn-checkout").click();
   });
 
