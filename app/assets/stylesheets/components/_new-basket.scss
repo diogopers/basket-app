@@ -69,7 +69,8 @@
 
 .cart-card-basket {
   box-shadow: 0 0 5px rgba(0,0,0,0.20);
-  border-radius: 100px;
+  border-radius: 100%;
+  width: 250px;
 }
 
 .cart-card-basket img {
@@ -79,7 +80,7 @@
 }
 
 .review {
-  text-align: left;
+  // text-align: left;
   display: block;
 }
 
@@ -110,12 +111,18 @@ hr {
 }
 
 .payment {
-  text-justify: left;
+  // text-justify: left;
 
 }
 
 .review-extras {
   width: 100px;
   border-radius: 5px;
+}
+
+.vertical-aligned {
+  position: relative;
+  margin-top: 10%;
+
 }
 

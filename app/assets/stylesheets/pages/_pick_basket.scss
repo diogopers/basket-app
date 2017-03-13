@@ -1,0 +1,66 @@
+.vegetables .description {
+  margin-top: 20px;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+.vegetables:hover .description {
+ visibility: visible;
+}
+
+.fruits .description {
+  margin-top: 20px;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+.fruits:hover .description {
+ visibility: visible;
+}
+
+.vegetablesfruits .description {
+  margin-top: 20px;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+.vegetablesfruits:hover .description {
+ visibility: visible;
+}
+
+.small .description {
+  margin-top: 20px;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+.small:hover .description {
+ visibility: visible;
+}
+
+.medium .description {
+  margin-top: 20px;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+.medium:hover .description {
+ visibility: visible;
+}
+
+.large .description {
+  margin-top: 20px;
+  font-size: 14px;
+  visibility: hidden;
+}
+
+.large:hover .description {
+ visibility: visible;
+}
+
+.container .select .btn {
+  margin-top: 30px;
+  margin-right: 14px;
+}
+
+

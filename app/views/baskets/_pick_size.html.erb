@@ -10,27 +10,32 @@
     <h2>Pick the size of your Basket</h2>
     <div class="row" id="basket-size">
 
-      <div data-size="small" class="basket-size">
+      <div data-size="small" class="basket-size small">
         <div  class="col-sm-4 col-xs-12" class="">
           <%= image_tag "size-s.png", class: "hvr-float" %>
           <h4>Small</h4>
+          <p class="description">The small basket is ideal for one person, it will cover most of your meals for the week!</p>
         </div>
       </div>
 
-      <div data-size="medium" class="basket-size">
+      <div data-size="medium" class="basket-size medium">
         <div data-size="medium" class="col-sm-4 col-xs-12">
           <%= image_tag "size-m.png", class: "hvr-float" %>
           <h4>Regular</h4>
+          <p class="description">The medium basket is ideal for two people. If you live as a couple, it will cover all your weekly needs!</p>
         </div>
       </div>
 
-      <div data-size="large" class="basket-size">
+      <div data-size="large" class="basket-size large">
         <div data-size="large" class="col-sm-4 col-xs-12">
           <%= image_tag "size-g.png",class: "hvr-float" %>
           <h4>Big</h4>
+          <p class="description">The large basket is ideal for a family. Parents and children will eat a balanced diet altogether!</p>
         </div>
       </div>
 
     </div>
+    <%= link_to "Previous", "#", class: "btn btn-md btn-info" %>
+    <%= link_to "Confirm", "#", class: "btn btn-md btn-primary" %>
   </div>
 </div>

@@ -1,29 +1,34 @@
 <div class="container text-center">
   <div class="select">
     <h2>What do you want in your Basket?</h2>
-    <div class="row" id="basket-type">
 
-      <div data-category="vegetables" class="category">
+    <div class="row" id="basket-type">
+      <div data-category="vegetables" class="category vegetables">
         <div class="col-sm-4 col-xs-12">
           <%= image_tag "vegetables.jpg", class: "hvr-float" %>
           <h4>Vegetables</h4>
+          <p class="description">Your weekly basket of seasonal vegetables will contain 4-6 different kinds of vegetables directly harvested from our producers' gardens!</p>
         </div>
       </div>
 
-      <div data-category="fruits" class="category">
+      <div data-category="fruits" class="category fruits">
         <div class="col-sm-4 col-xs-12">
           <%= image_tag "fruits.jpg", class: "hvr-float" %>
           <h4>Fruits</h4>
+          <p class="description">Your weekly basket of seasonal fruits will contain 2-4 different kinds of fruits  harvested with love by our local producers!</p>
         </div>
       </div>
 
-      <div data-category="both" class="category">
+      <div data-category="both" class="category vegetablesfruits">
         <div class="col-sm-4 col-xs-12">
           <%= image_tag "fruitsvegetables.jpg", class: "hvr-float" %>
-          <h4>Fruits & Vegetables</h4>
+          <h4>Vegetables & Fruits</h4>
+          <p class="description">Your weekly basket of vegetables & fruits will contain the perfect mix of vegetables and fruits, for a week rich in vitamins!</p>
         </div>
       </div>
 
     </div>
+    <%= link_to "Previous", "#", class: "btn btn-md btn-info" %>
+    <%= link_to "Confirm", "#", class: "btn btn-md btn-primary" %>
   </div>
 </div>

@@ -3,7 +3,6 @@
    <h3> <%= humanized_money_with_symbol(@order.basket.price + sum_extras) %> </h3>
 </div>
 
-
 <div id="review-footer-button">
   <%= link_to "CHECKOUT", review_order_path(@order.id), method: :get, remote: true, class: "review-order" %>
   <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
