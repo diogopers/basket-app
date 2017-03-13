@@ -4,6 +4,7 @@ class BasketsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def new
+
 #     session.delete(:order_id)
     if @order.present? && @order.id != nil
       @order = Order.find(session[:order_id])
@@ -36,6 +37,7 @@ class BasketsController < ApplicationController
   private
 
   def set_delivery_points
+
     if @order.present? && @order.id != nil
       @order = Order.find(session[:order_id])
     else
@@ -49,6 +51,7 @@ class BasketsController < ApplicationController
       marker.lng delivery_point.longitude
       marker.infowindow render_to_string(partial: "/delivery_points/map_box", :formats => [:html], locals: { delivery_point: delivery_point })
       # marker.infowindow render_to_string(partial: "/delivery_points/map_box", locals: { flat: flat })
+    end
     end
   end
 
