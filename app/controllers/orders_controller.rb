@@ -16,7 +16,10 @@ class OrdersController < ApplicationController
       @order.status = "first step"
     end
 
-    if @order.save
+    p @order.errors
+    p @order.valid?
+
+    if @order.save!
       session[:order_id] = @order.id
     else
       flash[:notice] = "Failed to create order"

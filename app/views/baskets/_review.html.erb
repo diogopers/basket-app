@@ -112,9 +112,10 @@
             </div>
             <div class="col-xs-6 col-sm-6">
               <div class="review-order-total" id="submit-order">
-                <h5>SUBMIT &nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i></h5>
-
+                <%= button_to "SUBMIT", order_pick_address_path, method: :get %>
+                <!-- <h5>SUBMIT &nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i></h5> -->
               </div>
+
             </div>
           </div>
         </div>

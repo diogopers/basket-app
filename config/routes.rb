@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:new, :create, :update, :show] do
     resources :payments, only: [:new, :create]
     post 'set_address', on: :member
+    get 'pick_address', on: :member
   end
   
   get "order", to: "orders#show"
