@@ -3,6 +3,14 @@
   <br>
   <div class="delivery_point text-center"><%= delivery_point.address %></div>
   <br>
-  <%= link_to "Select this delivery point", "#?delivery_point=#{delivery_point.id}", class: "btn btn-primary", aria_pressed: "true" %>
+  
+  <%= simple_form_for(@order, :url => set_address_order_path(@order.id), :method => :post, remote: true) do |form| %>
+    <%= form.input :delivery_point, :as => :hidden, :input_html => { value: delivery_point.id } %>
+    <%= form.submit "Select this delivery point", class: "btn btn-primary set-address", aria_pressed: "true" %>
+  <% end %>
 </div>
+
+
+
+
 

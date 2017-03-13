@@ -1,5 +1,6 @@
 class ExtraOrdersController < ApplicationController
   respond_to :html, :js
+  skip_before_action :authenticate_user!, only: :create
 
   def create
     @extra_order = ExtraOrder.where( order_id: session[:order_id],

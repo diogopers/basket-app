@@ -46,10 +46,8 @@
 
 #basket-type img {
   vertical-align: middle;
-  height: 170px;
   margin-bottom: 20px;
-  border-radius: 150px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
 }
 
 
@@ -60,7 +58,7 @@
 
 #basket-size img {
   vertical-align: middle;
-  height: 170px;
+  height: 210px;
   margin-bottom: 20px;
 }
 
@@ -115,3 +113,9 @@ hr {
   text-justify: left;
 
 }
+
+.review-extras {
+  width: 100px;
+  border-radius: 5px;
+}
+

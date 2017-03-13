@@ -41,7 +41,14 @@
 }
 
 .card-wrapper {
-  position: relative;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px transparent;
   border-radius: 5px;
   height: 240px;
   // width: 300px;
@@ -51,6 +58,10 @@
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
+}
+
+.card-wrapper:hover, .card-wrapper:focus, .card-wrapper:active {
+  box-shadow: inset 0 0 0 4px $light-green, 0 0 1px transparent;
 }
 
 .card {
@@ -198,11 +209,25 @@
 }
 
 .cart-card h2 {
+  height: 20px;
   font-family: 'Roboto';
   font-weight: 700;
   color: white;
   font-size: 0.8em;
   text-transform: uppercase;
   margin: 0px;
+  word-break: break-word;
   // justify-content: center;
+}
+
+.hvr-border-fade {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px transparent;
+  /* Hack to improve aliasing on mobile/tablet devices */
 }

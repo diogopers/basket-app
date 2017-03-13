@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: :create
+  skip_before_action :authenticate_user!, only: [:create, :show]
 
   # @order = Order.find(session[:order_id])
 
@@ -40,9 +40,25 @@ class OrdersController < ApplicationController
     end
   end
 
+  def set_address
+    @order = Order.find(session[:order_id])
+    @order.delivery_point = DeliveryPoint.find(params[:order][:delivery_point])
+    @order.save
+    respond_to do |format|
+      format.js {
+             render :template => "orders/confirmation.js.erb",
+             :layout => false
+          }
+    end
+  end
+
   private
   def basket_params
     params.require(:basket).permit(:category, :size, :size_url)
+  end
+
+  def order_params
+    params.require(:order).permit(:delivery_point_id)
   end
 
 end
