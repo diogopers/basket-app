@@ -97,6 +97,87 @@ producer_2 = Producer.create!({
     remote_photo_url: "https://s1.vagalume.com/deborah-blando/images/profile-bigw314.jpg"
   })
 
+producer_3 = Producer.create!({
+    name: "Maria Machado",
+    city: "Resende",
+    phone: "(24) 8549 0712",
+    email: "maria@maria.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "http://civileats.com/wp-content/uploads/2014/12/Leah_Penniman-e1417460891456-680x371edit.jpg"
+  })
+
+producer_4 = Producer.create!({
+    name: "João Carlos",
+    city: "Rio de Janeiro",
+    phone: "(21) 7949 0739",
+    email: "joao@carlos.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "http://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/28/3/FNM_040112-TTAH-028_s3x4.jpg.rend.hgtvcom.966.1288.jpeg"
+  })
+
+producer_5 = Producer.create!({
+    name: "Ana Dantas",
+    city: "Rio de Janeiro",
+    phone: "(24) 9934 0712",
+    email: "ana@ana.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "http://5pz91qmfi1-flywheel.netdna-ssl.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-14-at-7.28.04-AM.jpg"
+  })
+
+producer_6 = Producer.create!({
+    name: "Alberto Silva",
+    city: "Niterói",
+    phone: "(21) 9969 4292",
+    email: "alberto@alberto.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "http://www.patissier.cz/data/userfiles/image/Markus%20Breier.JPG"
+  })
+
+producer_7 = Producer.create!({
+    name: "Alaor Fernandes",
+    city: "Miguel Pereira",
+    phone: "(24) 8669 4122",
+    email: "alaor@alaor.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "http://thebeautifulhumanrace.com/wp-content/uploads/2011/09/brazil-3.jpg"
+  })
+
+producer_8 = Producer.create!({
+    name: "Miguel Monteiro",
+    city: "Petrópolis",
+    phone: "(24) 2433 2122",
+    email: "miguel@miguel.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "https://i.models.com/mdx/i/2014/06/1_Philip_Huang_by_Idris_Ton.jpg"
+  })
+
+producer_9 = Producer.create!({
+    name: "Francisca Alves",
+    city: "Paraty",
+    phone: "(24) 2455 9900",
+    email: "francisca@francisca.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "https://gatasnegrasbrasileiras.files.wordpress.com/2013/06/dandara-batista-correia.jpg"
+  })
+
+producer_10 = Producer.create!({
+    name: "Carla Franco",
+    city: "Bambuí",
+    phone: "(24) 2455 9900",
+    email: "carla@carla.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "https://www.google.com.br/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F2%2F26%2FAllie_Mae_Burroughs_print.jpg&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFarm_Security_Administration&docid=TRaKNbxprZPX2M&tbnid=jSWBWRqImnONhM%3A&vet=1&w=2590&h=3367&bih=699&biw=1038&q=farmer%20woman%20portrait&ved=0ahUKEwi__rO6sNbSAhWDHJAKHWjNDNIQMwhpKEYwRg&iact=mrc&uact=8#h=3367&imgdii=Mo4bQ42w9f5QgM:&imgrc=jSWBWRqImnONhM:&vet=1&w=2590"
+  })
+
+producer_11 = Producer.create!({
+    name: "Nelson Aguillar",
+    city: "Magé",
+    phone: "(24) 9834 9900",
+    email: "nelson@nelson.com",
+    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    remote_photo_url: "https://2dhnizrxqvv1awj231eodql1-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/Gainesville-Portrait-And-Family-Photography-Photographer-Lucian-Badea-Gainesville-Florida-Tyler-685x1026-e1404227154535.jpg"
+  })
+
 Extra.create!({
     name: "Olive Oil",
     price_cents: 899,
@@ -122,6 +203,153 @@ Extra.create!({
     category: "ingredients",
     producer_id: producer_1.id,
     remote_photo_url: "http://holmbush.farm/wp-content/uploads/2015/03/free-range-eggs-5.jpg"
+  })
+
+Extra.create!({
+    name: "Corn",
+    price_cents: 549,
+    info: "Pack with 5",
+    category: "ingredients",
+    producer_id: producer_3.id,
+    remote_photo_url: "http://www.motherearthnews.com/~/media/Images/MEN/Editorial/Articles/Magazine%20Articles/1972/07-01/Grow%20Your%20Own%20Corn/Corn.jpg"
+  })
+
+Extra.create!({
+    name: "Basil pesto",
+    price_cents: 1099,
+    info: "200g",
+    category: "ingredients",
+    producer_id: producer_3.id,
+    remote_photo_url: "http://img.taste.com.au/KLBWt-i1/taste/2016/11/basil-pesto-31017-1.jpeg"
+  })
+
+Extra.create!({
+    name: "Tomato sauce",
+    price_cents: 699,
+    info: "200g",
+    category: "ingredients",
+    producer_id: producer_3.id,
+    remote_photo_url: "http://atmedia.imgix.net/ffe5106a684675f4fcfac7f4809f9a6599ecba9f?w=800&fit=max"
+  })
+
+Extra.create!({
+    name: "Fettuccine pasta",
+    price_cents: 999,
+    info: "500g",
+    category: "ingredients",
+    producer_id: producer_4.id,
+    remote_photo_url: "http://www.borgattis.com/wp-content/uploads/2014/08/Borgattis-Egg-Fettuccine-Pasta1.jpg"
+  })
+
+Extra.create!({
+    name: "Potato gnocchi",
+    price_cents: 1299,
+    info: "500g",
+    category: "ingredients",
+    producer_id: producer_4.id,
+    remote_photo_url: "http://www.seriouseats.com/assets_c/2012/06/20120626-211763-GFTues-GnocchiHowTo12-thumb-625xauto-251589.jpg"
+  })
+
+Extra.create!({
+    name: "Hibiscus tea",
+    price_cents: 1399,
+    info: "1l - with hibiscus, lemon and mint",
+    category: "beverages",
+    producer_id: producer_5.id,
+    remote_photo_url: "http://www.theteatalk.com/images/xD_hibiscus_flower_tea_sm.jpg.pagespeed.ic.7u1-KQwSZm.jpg"
+  })
+
+Extra.create!({
+    name: "Croissants",
+    price_cents: 1499,
+    info: "500g",
+    category: "bakery",
+    producer_id: producer_6.id,
+    remote_photo_url: "http://www.cabidecolorido.com.br/wp-content/uploads/2015/04/croissant_2089853b.jpg"
+  })
+
+Extra.create!({
+    name: "Tapioca flour",
+    price_cents: 1200,
+    info: "1kg",
+    category: "ingredients",
+    producer_id: producer_7.id,
+    remote_photo_url: "https://http2.mlstatic.com/farinha-de-tapioca-1-kg-promoco-veja--D_NQ_NP_569211-MLB20501989410_112015-F.jpg"
+  })
+
+Extra.create!({
+    name: "Tapioca couscous",
+    price_cents: 1000,
+    info: "a full platter",
+    category: "bakery",
+    producer_id: producer_7.id,
+    remote_photo_url: "http://brazigzag.com/wp-content/uploads/2013/04/cuscuz-de-tapioca-couscous-coconut-four-bars.jpg?x30735"
+  })
+
+Extra.create!({
+    name: "Tapioca ice cream",
+    price_cents: 1400,
+    info: "1l",
+    category: "beverages",
+    producer_id: producer_7.id,
+    remote_photo_url: "http://static.wixstatic.com/media/f48161_0e38897c984f43dc835d6f25e2cf3d2e.png/v1/fill/w_626,h_417/f48161_0e38897c984f43dc835d6f25e2cf3d2e.png"
+  })
+
+Extra.create!({
+    name: "Chocolate chip cookies",
+    price_cents: 800,
+    info: "300g",
+    category: "bakery",
+    producer_id: producer_8.id,
+    remote_photo_url: "http://images-gmi-pmc.edge-generalmills.com/f7b548e6-df46-49f9-a243-5ad6a1a080d6.jpg"
+  })
+Extra.create!({
+    name: "White chocolate chip cookies",
+    price_cents: 800,
+    info: "300g",
+    category: "bakery",
+    producer_id: producer_8.id,
+    remote_photo_url: "https://www.averiecooks.com/wp-content/uploads/2011/10/pboatmeal-18-665x403.jpg"
+  })
+Extra.create!({
+    name: "Banana cachaça",
+    price_cents: 2100,
+    info: "700ml",
+    category: "beverages",
+    producer_id: producer_9.id,
+    remote_photo_url: "https://assets.papodehomem.com.br/2017/02/24/20/56/54/b555a706-f168-4f10-8d5d-866614ef1f23/cachaca-jpg"
+  })
+Extra.create!({
+    name: "Goat cheese",
+    price_cents: 2000,
+    info: "300g",
+    category: "dairy",
+    producer_id: producer_10.id,
+    remote_photo_url: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2014/10/22/18/web-goats-cheese-RF-getty-c.jpg"
+  })
+Extra.create!({
+    name: "Canastra cheese",
+    price_cents: 3500,
+    info: "500g",
+    category: "dairy",
+    producer_id: producer_10.id,
+    remote_photo_url: "http://img.estadao.com.br/paladar/files/2013/11/produto-queijo-canastra.jpg"
+  })
+Extra.create!({
+    name: "Coriander",
+    price_cents: 200,
+    info: "200g",
+    category: "ingredients",
+    producer_id: producer_11.id,
+    remote_photo_url: "https://steptohealth.com/wp-content/uploads/2015/09/1-cilantro.jpg"
+  })
+Extra.create!({
+    name: "Rosemary",
+    price_cents: 200,
+    info: "200g",
+    category: "ingredients",
+    producer_id: producer_11.id,
+    remote_photo_url: "https://draxe.com/wp-content/uploads/2014/07/Rosemary-1-480x411.jpg"
   })
 
 delivery_point_1 = DeliveryPoint.create!({

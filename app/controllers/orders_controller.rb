@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   # @order = Order.find(session[:order_id])
 
   def create
-    @extras = Extra.all
+    @extras = Extra.search(params)
     @extra_order = ExtraOrder.new
     @basket = Basket.find_by(category: basket_params[:category],
                              size:     basket_params[:size])

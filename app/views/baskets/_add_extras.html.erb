@@ -10,12 +10,18 @@
 <!-- FILTER -->
   <div class="filter">
     <h4>Filter by category</h4>
-    <%= form_tag root_path, method: :get, :class => "form-inline checkbox-circle checkbox-primary" do %>
-      <%= label_tag "dairy", raw("#{check_box_tag('dairy')} Dairy") %>
-      <%= label_tag "bakery", raw("#{check_box_tag('bakery')} Bakery") %>
-      <%= label_tag "beverage", raw("#{check_box_tag('beverage')} Baverage") %>
-      <%= label_tag "ingredients", raw("#{check_box_tag('ingredients')} Ingredients") %>
+    <%= form_tag new_basket_path, method: :get, :class => "form-inline checkbox-circle checkbox-primary" do %>
+      <%= check_box_tag :ingredients, 'ingredients', params[:ingredients].present? %>
+      <%= label_tag 'ingredients' %>
+      <%= check_box_tag :bakery, 'bakery', params[:bakery].present? %>
+      <%= label_tag 'bakery' %>
+      <%= check_box_tag :dairy, 'dairy', params[:dairy].present? %>
+      <%= label_tag 'dairy' %>
+      <%= check_box_tag :beverages, 'beverages', params[:beverages].present? %>
+      <%= label_tag 'beverages' %>
+      <%= submit_tag %>
     <% end %>
+
   </div>
 <!-- END FILTER -->
 
