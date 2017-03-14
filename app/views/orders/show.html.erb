@@ -9,16 +9,15 @@
         every Tuesday morning</h2>
         <br>
         <h4><%= @order.delivery_point.address %></h4><br>
-        <br>
-        <hr>
-
-      
       </div>
     </div>
 
-    <div>
+    <div class="text-center">
       <%= render "baskets/map_delivery_point_selected" %>
     </div>
+
+    <br>
+    <hr>
 
     <br>
     <h5><%= @order.basket.size.upcase %> BASKET WITH <%= @order.basket.category.upcase %>, DELIVERED WEEKLY.</h5>
