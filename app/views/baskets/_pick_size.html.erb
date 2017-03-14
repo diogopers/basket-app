@@ -1,4 +1,4 @@
-<%= simple_form_for(@basket, :url => orders_path, :method => :post, remote: true) do |form| %>
+<%= simple_form_for(@basket, :url => orders_path(params: params), :method => :post, remote: true) do |form| %>
   <%= form.input :category, :as => :hidden, :input_html => { :id => "category" } %>
   <%= form.input :size, :as => :hidden, :input_html => { :id => "size" } %>
   <%= form.button :submit, :type => :hidden %>

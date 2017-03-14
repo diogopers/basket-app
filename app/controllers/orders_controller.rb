@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   # @order = Order.find(session[:order_id])
 
   def create
-    @extras = Extra.all
+    @extras = Extra.search(params)
     @extra_order = ExtraOrder.new
     @basket = Basket.find_by(category: basket_params[:category],
                              size:     basket_params[:size])
@@ -49,6 +49,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.where(state: 'paid').find(params[:id])
+
+    @hash = Gmaps4rails.build_markers(@order.delivery_point) do |delivery_point, marker|
+      marker.lat delivery_point.latitude
+      marker.lng delivery_point.longitude
+      marker.infowindow render_to_string(partial: "/delivery_points/map_box", :formats => [:html], locals: { delivery_point: delivery_point })
+    end
   end
 
   def pick_address

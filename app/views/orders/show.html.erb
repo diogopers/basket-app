@@ -2,6 +2,7 @@
   <div class="select" >
     <div class="row">
       <div class="col-md-12 ">
+
         <h2><i class="fa fa-shopping-basket" aria-hidden="true"></i>
         Your order was place succesfully<br>
         and will be delivered to this address<br>
@@ -11,9 +12,13 @@
         <br>
         <hr>
 
+      
       </div>
     </div>
 
+    <div>
+      <%= render "baskets/map_delivery_point_selected" %>
+    </div>
 
     <br>
     <h5><%= @order.basket.size.upcase %> BASKET WITH <%= @order.basket.category.upcase %>, DELIVERED WEEKLY.</h5>
