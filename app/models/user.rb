@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_one :order
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

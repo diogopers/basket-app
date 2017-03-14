@@ -15,10 +15,12 @@ class OrdersController < ApplicationController
     if session[:order_id].present?
       @order = Order.find(session[:order_id])
       @order.basket = @basket
+      @order.user = current_user
       @order.state = "pending"
     else
       @order = @basket.orders.new
       @order.state = "pending"
+      @order.user = current_user
     end
 
     if @order.save!
