@@ -53,7 +53,7 @@
          <ul class="list-inline">
             <% uniq_producers(order.extra_orders).each do |producer| %>
                 <li >
-                  <%= cl_image_tag producer.photo.url, class: "avatar" %>
+                  <%= cl_image_tag producer.photo, class: "avatar", width: '36', height: '36', gravity: "face", crop: "thumb"%>
                   <%= producer.name %>
                 </li>
             <% end %>

@@ -40,8 +40,7 @@
 
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra.photo, crop: :fill %>')">
 
-              <%= cl_image_tag extra.producer.photo.url, class: "card-user avatar pointer", :width=>200, :height=>200, :gravity=>"face", :crop=>"thumb",
-                       "data-toggle" => "modal", "data-target" => "#modal-#{extra.producer_id}" %>
+              <%= cl_image_tag extra.producer.photo, class: "card-user avatar pointer", width: '36', height: '36', gravity: "face", crop: "thumb", "data-toggle" => "modal", "data-target" => "#modal-#{extra.producer_id}" %>
 
             </div>
               <div class="card-product">
