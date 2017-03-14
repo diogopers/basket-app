@@ -198,24 +198,23 @@
                 handler.getMap().setZoom(14);
               }
 
-
               handler.fitMapToBounds();
 
+              var input = document.getElementById('address_field');
+              var options = {};
+
+              autocomplete = new google.maps.places.Autocomplete(input, options);
 
 
+              autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                  handler.getMap().panTo(place.geometry.location);
+                  handler.getMap().setZoom(14);
+              })
 
             });
 
-            var input = document.getElementById('address_field');
-            var options = {};
 
-            autocomplete = new google.maps.places.Autocomplete(input, options);
-
-            autocomplete.addListener('place_changed', function() {
-              var place = autocomplete.getPlace();
-                handler.getMap().panTo(place.geometry.location);
-                handler.getMap().setZoom(14);
-            })
 
 
 
