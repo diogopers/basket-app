@@ -24,11 +24,15 @@
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
-            <li>
-              <%= link_to order_path(current_user.order.id) do %>
-                <i id="drop-menu" class="fa fa-shopping-basket"></i>  <%= t(".profile", default: "Your Basket") %>
-              <% end %>
-            </li>
+
+            <% if current_user.order.present? %>
+              <li>
+                <%= link_to order_path(current_user.order.id) do %>
+                  <i id="drop-menu" class="fa fa-shopping-basket"></i>  <%= t(".profile", default: "Your Basket") %>
+                <% end %>
+              </li>
+            <% end %>
+
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -48,11 +52,15 @@
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
-            <li>
-              <%= link_to order_path(current_user.order.id) do %>
-                <i id="drop-menu" class="fa fa-shopping-basket"></i>  <%= t(".profile", default: "Your Basket") %>
-              <% end %>
-            </li>
+
+            <% if current_user.order.present? %>
+              <li>
+                <%= link_to order_path(current_user.order.id) do %>
+                  <i id="drop-menu" class="fa fa-shopping-basket"></i>  <%= t(".profile", default: "Your Basket") %>
+                <% end %>
+              </li>
+            <% end %>
+
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
