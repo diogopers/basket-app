@@ -6,7 +6,9 @@
       </div>
     </div>
 
-
+    <div>
+      <p><%= @order.delivery_point.address %></p>
+    </div>
     <div class="row ">
       <div class="col-md-8">
         <div class="row">
@@ -30,6 +32,9 @@
       </div>
     </div>
 
+    <div>
+      <%= render "baskets/map_delivery_point_selected" %>
+    </div>
 
     <br>
     <hr>

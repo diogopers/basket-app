@@ -49,6 +49,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.where(state: 'paid').find(params[:id])
+
+    @hash = Gmaps4rails.build_markers(@order.delivery_point) do |delivery_point, marker|
+      marker.lat delivery_point.latitude
+      marker.lng delivery_point.longitude
+      marker.infowindow render_to_string(partial: "/delivery_points/map_box", :formats => [:html], locals: { delivery_point: delivery_point })
+    end
   end
 
   def pick_address
