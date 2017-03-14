@@ -1,58 +1,51 @@
 
-  <%= render 'baskets/basket_menu' %>
+<%= render 'baskets/basket_menu' %>
 
-  <div class="padded text-center">
-    <div class="tab-content" id="selectbasket">
-      <%= render 'baskets/select' %>
-    </div>
-    <div class="tab-content hidden" id="picksize">
-      <%= render 'baskets/pick_size' %>
-    </div>
-    <div class="tab-content hidden" id="addextras">
-      <div id="basket-add-extras"></div>
-      <div id="basket-footer"></div>
-      <%#= render 'baskets/add_extras' %>
-    </div>
-    <div class="tab-content hidden" id="revieworder">
-      <div id="basket-review-order"></div>
-      <%#= render 'baskets/review', order:  %>
-    </div>
-    <div class="tab-content" id="address">
-    <div id="basket-address"></div>
-      <%#= render 'baskets/address' %>
-    </div>
-    <div class="tab-content hidden" id="paymentconfirmation">
-      <div id="confirmation-view"></div>
-      <%#= render 'baskets/confirmation' %>
-    </div>
+<div class="padded text-center">
+  <div class="tab-content" id="selectbasket">
+    <%= render 'baskets/select' %>
+  </div>
+  <div class="tab-content hidden" id="picksize">
+    <%= render 'baskets/pick_size' %>
+  </div>
+  <div class="tab-content hidden" id="addextras">
+    <div id="basket-add-extras"></div>
+    <div id="basket-footer"></div>
+    <%#= render 'baskets/add_extras' %>
+  </div>
+  <div class="tab-content hidden" id="revieworder">
+    <div id="basket-review-order"></div>
+    <%#= render 'baskets/review', order:  %>
+  </div>
+  <div class="tab-content" id="address">
+  <div id="basket-address"></div>
+    <%#= render 'baskets/address' %>
+  </div>
+  <div class="tab-content hidden" id="paymentconfirmation">
+    <div id="confirmation-view"></div>
+    <%#= render 'baskets/confirmation' %>
   </div>
 </div>
+
 
 
 <% if current_user && @order.persisted? %>
   <% content_for(:after_js) do %>
     <script>
+
+
+    $(document).ready(function(){
+
       // First step: assign basket size & category before submitting;
       $("#category").val(("<%= @order.basket.category %>"));
       $("#size").val(("<%= @order.basket.size %>"));
       $("#new_basket").submit();
 
-      // Wait 5 seconds before clicking on the review order link
-
-      // $("#basket-footer").on("click", ".review-order",function(e){
-      //   $(".review-order").click();
-      // });
-
-      setTimeout(function(){
-        $(".review-order").click();
-      }, 1000);
-
-      // Wait 5 seconds before clicking on the submit order link
-      setTimeout(function(){
-        $("#submit-order").click();
-      }, 2000);
 
 
 
+
+    });
+    </script>
   <% end %>
 <% end %>

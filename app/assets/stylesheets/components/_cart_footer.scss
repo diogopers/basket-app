@@ -1,3 +1,7 @@
+.padded-bottom {
+  margin-bottom: 120px;
+}
+
 .debug {
   border: 1px solid red;
 
@@ -33,10 +37,13 @@
 .horizontal-scroll {
   width: 65%;
   overflow-x: auto;
-  // white-space: nowrap;
   float: left;
-  // border-left: 4px solid $gray;
-  // border-right:4px solid $gray;
+}
+
+.horizontal-scroll-review {
+  width: 100%;
+  overflow-x: auto;
+  float: left;
 }
 
 .horizontal-scroll li i {
@@ -44,7 +51,7 @@
     font-size: 1.2em;
 }
 
-.horizontal-scroll li:last-child {
+.horizontal-scroll li:last-child, .horizontal-scroll-review li:last-child {
   display: none;
 }
 
