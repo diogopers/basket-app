@@ -212,12 +212,16 @@
   height: 20px;
   font-family: 'Roboto';
   font-weight: 700;
-  color: white;
+  color: white !important;
   font-size: 0.8em;
   text-transform: uppercase;
   margin: 0px;
   word-break: break-word;
   // justify-content: center;
+}
+
+.review-style h5 {
+  font-size: 1.2em;
 }
 
 .hvr-border-fade {

@@ -62,19 +62,23 @@
   margin-bottom: 20px;
 }
 
-.fa-shopping-basket {
+.fa {
   color: $dark-yellow;
-  margin: 0 10px;
 }
+
+
+// .fa-shopping-basket {
+//   color: $dark-yellow;
+//   margin: 0 10px;
+// }
 
 .cart-card-basket {
   box-shadow: 0 0 5px rgba(0,0,0,0.20);
   border-radius: 100%;
-  width: 250px;
+  width: 164px;
 }
 
 .cart-card-basket img {
-  width: 100%;
   border-radius: 100px;
 
 }

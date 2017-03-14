@@ -1,3 +1,7 @@
+.padded-bottom {
+  margin-bottom: 120px;
+}
+
 .debug {
   border: 1px solid red;
 
@@ -12,6 +16,7 @@
     -webkit-box-shadow: 0px -20px 37px -30px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px -20px 37px -30px rgba(0,0,0,0.2);
     box-shadow: 0px -20px 37px -30px rgba(0,0,0,0.2);
+    text-align: initial !important;
 }
 
 .your-basket {
@@ -32,10 +37,13 @@
 .horizontal-scroll {
   width: 65%;
   overflow-x: auto;
-  // white-space: nowrap;
   float: left;
-  // border-left: 4px solid $gray;
-  // border-right:4px solid $gray;
+}
+
+.horizontal-scroll-review {
+  width: 100%;
+  overflow-x: auto;
+  float: left;
 }
 
 .horizontal-scroll li i {
@@ -43,7 +51,7 @@
     font-size: 1.2em;
 }
 
-.horizontal-scroll li:last-child {
+.horizontal-scroll li:last-child, .horizontal-scroll-review li:last-child {
   display: none;
 }
 
@@ -75,9 +83,30 @@
 .review-order {
   text-align: center;
   float: right;
-  margin-right: 30px;
-  margin-top: 5%;
+  margin-right: 36px;
+  margin-top: 35px;
   color: $dark-green;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+#submit-order {
+  text-align: center;
+  float: right;
+  margin-right: 36px;
+  margin-top: 20px;
+  color: $dark-green;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.review-order:hover, #submit-order:hover {
+  text-decoration: none;
+}
+
+#review-footer-button .fa {
+  color: white !important;
+  float: right;
 }
 
 .review-order p {

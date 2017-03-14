@@ -15,10 +15,12 @@ class OrdersController < ApplicationController
     if session[:order_id].present?
       @order = Order.find(session[:order_id])
       @order.basket = @basket
+      @order.user = current_user
       @order.state = "pending"
     else
       @order = @basket.orders.new
       @order.state = "pending"
+      @order.user = current_user
     end
 
     if @order.save!
@@ -47,6 +49,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.where(state: 'paid').find(params[:id])
+
+    @hash = Gmaps4rails.build_markers(@order.delivery_point) do |delivery_point, marker|
+      marker.lat delivery_point.latitude
+      marker.lng delivery_point.longitude
+      marker.infowindow render_to_string(partial: "/delivery_points/map_box", :formats => [:html], locals: { delivery_point: delivery_point })
+    end
   end
 
   def pick_address

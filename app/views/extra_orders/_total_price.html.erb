@@ -3,7 +3,16 @@
    <h3> <%= humanized_money_with_symbol(@order.basket.price + sum_extras) %> </h3>
 </div>
 
-<div id="review-footer-button">
+<div id="review-footer-button display-inline">
   <%= link_to "CHECKOUT", review_order_path(@order.id), method: :get, remote: true, class: "review-order" %>
-  <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
+  <!-- <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i> -->
 </div>
+
+
+<%# if current_user && @order.persisted? %>
+    <!-- <script>
+    (function(){
+      $(".review-order").click();
+    })();
+    </script> -->
+<%# end %>
