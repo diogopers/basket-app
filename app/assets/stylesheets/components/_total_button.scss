@@ -2,13 +2,9 @@
   background-color: $dark-yellow;
   color: white;
   border-radius: 5px;
-  // float: right;
-  // display: inline;
-  // width:100%;
-  padding: 5px;
-  font-family: 'Dosis', sans-serif;
-  font-weight: 700;
-  margin: 10px;
+  padding: 14px;
+  text-align: initial;
+  height: 88px;
 }
 
 .review-price {
@@ -18,8 +14,8 @@
 }
 
 .review-price p {
-  font-weight: 700;
   font-size: 0.8em;
+  margin: 0px;
 }
 
 
