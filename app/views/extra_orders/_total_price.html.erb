@@ -7,3 +7,12 @@
   <%= link_to "CHECKOUT", review_order_path(@order.id), method: :get, remote: true, class: "review-order" %>
   <!-- <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i> -->
 </div>
+
+
+<%# if current_user && @order.persisted? %>
+    <!-- <script>
+    (function(){
+      $(".review-order").click();
+    })();
+    </script> -->
+<%# end %>

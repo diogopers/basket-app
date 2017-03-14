@@ -2,33 +2,17 @@
   <div class="select" >
     <div class="row">
       <div class="col-md-12 ">
-        <h2><i class="fa fa-shopping-basket" aria-hidden="true"></i>   Your order was place succesfully</h2>
-      </div>
-    </div>
 
-    <div>
-      <p><%= @order.delivery_point.address %></p>
-    </div>
-    <div class="row ">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-4 row-cart ">
-            <%= image_tag @order.basket.size_url, class: "avatar-basket-size" %> &nbsp;&nbsp;<h5><%= @order.basket.size.upcase %> BASKET</h5>
+        <h2><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        Your order was place succesfully<br>
+        and will be delivered to this address<br>
+        every Tuesday morning</h2>
+        <br>
+        <h4><%= @order.delivery_point.address %></h4><br>
+        <br>
+        <hr>
 
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-              <div class="cart-card-basket">
-              <%= image_tag @order.basket.category_url %>
-              </div>
-          </div>
-          <div class="col-xs-12 col-sm-8">
-            <div class="review">
-              <h5>WITH <%= @order.basket.category.upcase %>, DELIVERED WEEKLY.</h5>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </div>
 
@@ -37,89 +21,61 @@
     </div>
 
     <br>
-    <hr>
-
-
-    <div class="row ">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-4 row-cart ">
-            <h5>EXTRAS</h5>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="cart-card-extras">
-            <ul class="list-inline">
-              <% @order.extra_orders.each do |extra_order| %>
-                <li>
-                  <div class="cart-card-container">
-                  <%#= render 'extra_orders/badge_counter', extra_order: extra_order %>
-                    <div id="qtd-badge-<%= extra_order.extra.id %>" class="badge badge-green"> <%= extra_order.quantity %>
-                    </div>
-                    <%= image_tag extra_order.extra.photo, class: "review-extras" %>
-                    <a class="card-link" href="#" ></a>
-                  </div>
-                </li>
-
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <h5><%= @order.basket.size.upcase %> BASKET WITH <%= @order.basket.category.upcase %>, DELIVERED WEEKLY.</h5>
+    <br>
+    <ul class="list-inline">
+        <li><%= image_tag @order.basket.category_url, class: "cart-card-basket" %></li>
+        <li class="plus-sign"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
+        <li><%= image_tag @order.basket.size_url, class: "avatar-basket-size" %></li>
+    </ul>
 
     <br>
     <hr>
 
-
-    <div class="row ">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-8 row-cart ">
-            <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h5>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="cart-card-producers">
-              <ul class="list-inline">
-                <% uniq_producers(@order.extra_orders).each do |producer| %>
-                    <li >
-                      <div>
-                        <%= cl_image_tag producer.photo.url, class: "avatar" %>
-                        <%= producer.name %>
-                      </div>
-                    </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <br>
-    <hr>
-
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-8"></div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="review-total" id="total-button">
-          <div class="row">
-            <div class="col-xs-6 col-sm-6">
-              <div class="review-price">
-                <p>TOTAL<p>
-                 <h3> <%= humanized_money_with_symbol(@order.basket.price + sum_extras) %> </h3>
+    <!-- display extras -->
+    <div class="horizontal-scroll-review">
+      <div id="mini-card-cart">
+        <h5>EXTRAS</h5>
+        <ul class="list-inline">
+        <% @order.extra_orders.order(:created_at).each do |extra_order| %>
+          <li>
+            <div class="cart-card-container">
+              <%#= render 'extra_orders/badge_counter', extra_order: extra_order %>
+              <div id="qtd-badge-<%= extra_order.extra.id %>" class="badge badge-green"> <%= extra_order.quantity %> </div>
+              <div class="cart-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra_order.extra.photo, crop: :fill %>')">
+                <h2><%= extra_order.extra.name %></h2>
               </div>
             </div>
-          </div>
-        </div>
+          </li>
+          <li class="plus-sign"><i class="fa fa-plus" aria-hidden="true"></i></li>
+        <% end %>
+        </ul>
       </div>
     </div>
 
+    <br>
+    <br>
+    <hr>
+    <br>
 
+    <!-- display producers -->
+    <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS</h5>
+
+    <div class="row">
+      <div class="col-xs-13 text-center">
+         <ul class="list-inline">
+            <% uniq_producers(@order.extra_orders).each do |producer| %>
+                <li >
+                  <%= cl_image_tag producer.photo.url, class: "avatar" %>
+                  <%= producer.name %>
+                </li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    </div>
   </div>
 </div>
