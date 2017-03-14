@@ -12,7 +12,7 @@
 <!-- FILTER -->
   <div class="filter">
     <h4>Filter by category</h4>
-    <%= form_tag new_basket_path, method: :get, :class => "form-inline checkbox-circle checkbox-primary" do %>
+    <%= form_tag baskets_search_path, method: :get, remote: true, :class => "form-inline checkbox-circle checkbox-primary" do %>
       <%= check_box_tag :ingredients, 'ingredients', params[:ingredients].present? %>
       <%= label_tag 'ingredients' %>
       <%= check_box_tag :bakery, 'bakery', params[:bakery].present? %>
@@ -21,7 +21,7 @@
       <%= label_tag 'dairy' %>
       <%= check_box_tag :beverages, 'beverages', params[:beverages].present? %>
       <%= label_tag 'beverages' %>
-      <%= submit_tag %>
+      <%= submit_tag 'Filter' %>
     <% end %>
   </div>
   
