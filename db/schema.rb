@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20170314142153) do
     t.string   "category"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "price_cents",  default: 0, null: false
     t.string   "size_url"
     t.string   "category_url"
+    t.integer  "price_cents",  default: 0, null: false
   end
 
   create_table "delivery_points", force: :cascade do |t|
