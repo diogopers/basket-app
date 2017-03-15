@@ -1,7 +1,10 @@
 <div class="container select" id="pick-size">
   <h2>We’re almost there!</h2>
+  <brb>
+  <%= image_tag("logo-green.png", height: '250', width: '250', class: 'logo-checkout') %>
+  <br>
 
-<h1>Purchase of <%= @order.basket.size %> Basket with <%= @order.basket.category %></h1>
+<!-- <h1>Purchase of <%= @order.basket.size %> Basket with <%= @order.basket.category %></h1> -->
 <%= form_tag order_payments_path(@order) do %>
   <article>
     <label class="amount">
@@ -11,8 +14,6 @@
       </div>
     </label>
   </article>
-  <br>
-  <br>
   <br>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
