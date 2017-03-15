@@ -9,6 +9,7 @@
   <div class="select">
     <h2>Which extras do you want to add to your Basket, delivered weekly?</h2>
   </div>
+  <br>
 <!-- FILTER -->
   <div class="filter">
     <h4>Filter by category</h4>
@@ -21,7 +22,7 @@
       <%= label_tag 'dairy' %>
       <%= check_box_tag :beverages, 'beverages', params[:beverages].present? %>
       <%= label_tag 'beverages' %>
-      <%= submit_tag 'Filter' %>
+      <%= submit_tag 'See results', class: "btn btn-sm btn-default rounded" %>
     <% end %>
   </div>
 
