@@ -166,7 +166,7 @@ producer_10 = Producer.create!({
     phone: "(24) 2455 9900",
     email: "carla@carla.com",
     bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
-    remote_photo_url: "https://www.google.com.br/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F2%2F26%2FAllie_Mae_Burroughs_print.jpg&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFarm_Security_Administration&docid=TRaKNbxprZPX2M&tbnid=jSWBWRqImnONhM%3A&vet=1&w=2590&h=3367&bih=699&biw=1038&q=farmer%20woman%20portrait&ved=0ahUKEwi__rO6sNbSAhWDHJAKHWjNDNIQMwhpKEYwRg&iact=mrc&uact=8#h=3367&imgdii=Mo4bQ42w9f5QgM:&imgrc=jSWBWRqImnONhM:&vet=1&w=2590"
+    remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/2/26/Allie_Mae_Burroughs_print.jpg"
   })
 
 producer_11 = Producer.create!({
@@ -253,7 +253,7 @@ Extra.create!({
 Extra.create!({
     name: "Hibiscus tea",
     price_cents: 1399,
-    info: "1l - with hibiscus, lemon and mint",
+    info: "1l",
     category: "beverages",
     producer_id: producer_5.id,
     remote_photo_url: "http://www.theteatalk.com/images/xD_hibiscus_flower_tea_sm.jpg.pagespeed.ic.7u1-KQwSZm.jpg"
