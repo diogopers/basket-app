@@ -83,7 +83,7 @@ producer_1 = Producer.create!({
     city: "Rio de Janeiro",
     phone: "(41) 9988 0733",
     email: "peter@peter.com",
-    bio: "Gifted in researching spit-takes in Deltona, FL. Developed several new methods for analyzing junk food in Salisbury, MD. Practiced in the art of promoting Magic 8-Balls in the government sector.",
+    bio: " All of Peter Canolli chickens have access to organic pastures, where they spend their days clucking, strutting and pecking at bugs and earthworms. On rainy days, the chickens stay in the coop, but keeping them happy and healthy is his highest priority.",
     remote_photo_url: "http://wp.production.patheos.com/blogs/thepangeablog/files/2011/12/Kurt-Profile-Image-Square-Brick-1024x1024.jpg"
   })
 
