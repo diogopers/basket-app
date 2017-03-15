@@ -1,4 +1,4 @@
-<div class="container text-center" >
+<div class="container text-center review-style" >
   <div class="select" >
     <div class="row">
       <div class="col-md-12 ">
@@ -6,96 +6,65 @@
       </div>
     </div>
 
-<!-- display basket choice -->
-    <div class="row ">
-      <div class="col-sm-12 padded">
+    <!-- display basket choice -->
+    <br>
+    <h5><%= order.basket.size.upcase %> BASKET WITH <%= order.basket.category.upcase %>, DELIVERED WEEKLY.</h5>
+    <br>
+    <ul class="list-inline">
+        <li><%= image_tag order.basket.category_url, class: "cart-card-basket" %></li>
+        <li class="plus-sign"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
+        <li><%= image_tag order.basket.size_url, class: "avatar-basket-size" %></li>
+    </ul>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-4">
-                <div >
-                <%= image_tag order.basket.category_url, class: "cart-card-basket" %>
-                </div>
-            </div>
-            <div class="vertical-aligned">
-              <div class="col-xs-12 col-sm-8">
-                <div class="review">
-                  <h4><%= image_tag order.basket.size_url, class: "avatar-basket-size" %> &nbsp;&nbsp;<%= order.basket.size.upcase %> BASKET WITH <%= order.basket.category.upcase %>, DELIVERED WEEKLY.</h4>
-                </div>
+    <br>
+    <hr>
+
+    <!-- display extras -->
+    <div class="horizontal-scroll-review">
+      <div id="mini-card-cart">
+        <h5>EXTRAS</h5>
+        <ul class="list-inline">
+        <% order.extra_orders.order(:created_at).each do |extra_order| %>
+          <li>
+            <div class="cart-card-container">
+              <%#= render 'extra_orders/badge_counter', extra_order: extra_order %>
+              <div id="qtd-badge-<%= extra_order.extra.id %>" class="badge badge-green"> <%= extra_order.quantity %> </div>
+              <div class="cart-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra_order.extra.photo, crop: :fill %>')">
+                <h2><%= extra_order.extra.name %></h2>
               </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <br>
-    <hr>
-
-<!-- display extras -->
-    <div class="row ">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-4 row-cart ">
-            <h4>EXTRAS</h4>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="cart-card-extras">
-            <ul class="list-inline">
-              <% order.extra_orders.each do |extra_order| %>
-                <li>
-                  <div class="cart-card-container">
-                  <%#= render 'extra_orders/badge_counter', extra_order: extra_order %>
-                    <div id="qtd-badge-<%= extra_order.extra.id %>" class="badge badge-green"> <%= extra_order.quantity %>
-                    </div>
-                    <%= image_tag extra_order.extra.photo, class: "review-extras" %>
-                    <a class="card-link" href="#" ></a>
-                  </div>
-                </li>
-
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <br>
-    <hr>
-
-<!-- display producers -->
-    <div class="row ">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-8 row-cart ">
-            <h4>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS:</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="cart-card-producers">
-              <ul class="list-inline">
-                <% uniq_producers(order.extra_orders).each do |producer| %>
-                    <li >
-                      <div>
-                        <%= cl_image_tag producer.photo.url, class: "avatar" %>
-                        <%= producer.name %>
-                      </div>
-                    </li>
-                <% end %>
-              </ul>
             </div>
-          </div>
+          </li>
+          <li class="plus-sign"><i class="fa fa-plus" aria-hidden="true"></i></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
 
-        </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+
+    <!-- display producers -->
+    <h5>YOU ARE BUYING PRODUCTS FROM THESE PRODUCERS</h5>
+
+    <div class="row">
+      <div class="col-xs-13 text-center">
+         <ul class="list-inline">
+            <% uniq_producers(order.extra_orders).each do |producer| %>
+                <li >
+                  <%= cl_image_tag producer.photo, class: "avatar", width: '36', height: '36', gravity: "face", crop: "thumb"%>
+                  <%= producer.name %>
+                </li>
+            <% end %>
+          </ul>
       </div>
     </div>
 
     <br>
     <hr>
 
-<!-- display total -->
+    <!-- display total -->
     <div class="row">
       <div class="col-xs-12 col-sm-8"></div>
       <div class="col-xs-12 col-sm-4">
@@ -117,7 +86,17 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </div>
+
+
+<%# if current_user && @order.persisted? %>
+   <!--  <script>
+
+
+    (function(){
+        $('#submit-order').click();
+
+    })();
+    </script> -->
+<%# end %>

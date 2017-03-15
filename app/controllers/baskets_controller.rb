@@ -1,9 +1,11 @@
 class BasketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :new
+  skip_before_action :authenticate_user!, only: [:new, :search]
 
   def new
+    unless Order.find_by(id: session[:order_id]).present?
+      session.delete(:order_id)
+    end
 
-#     session.delete(:order_id)
     if current_user && session[:order_id]
       @order = Order.find(session[:order_id])
     elsif @order.present? && @order.id != nil
@@ -14,12 +16,25 @@ class BasketsController < ApplicationController
 
     @basket = Basket.new
     @producers = Producer.all
-    @extras = Extra.all
+
+    @extras = Extra.search(params)
+
     @baskets = Basket.all
     @extra_order = ExtraOrder.new
     @extra_orders = ExtraOrder.where(order_id: session[:order_id])
   end
 
+  def search
+    @extras = Extra.search(params)
+    @extra_order = ExtraOrder.new
+
+    respond_to do |format|
+      format.js {
+                  render :template => "baskets/search.js.erb",
+                  :layout => false
+      }
+    end
+  end
 
   private
 

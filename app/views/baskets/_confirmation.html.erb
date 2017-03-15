@@ -1,13 +1,19 @@
 <div class="container select" id="pick-size">
   <h2>We’re almost there!</h2>
 
-<h1>Purchase of basket <%= @order.id %></h1>
+<h1>Purchase of <%= @order.basket.size %> Basket with <%= @order.basket.category %></h1>
 <%= form_tag order_payments_path(@order) do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+      <div class="review-price">
+        <p>TOTAL<p>
+         <h3> <%= humanized_money_with_symbol(@order.amount) %> </h3>
+      </div>
     </label>
   </article>
+  <br>
+  <br>
+  <br>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -18,34 +24,4 @@
 
 <% end %>
 
-
-
-
-
-
-  <div class="row ">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-12 row-cart ">
-          </div>
-        </div>
-          <div class="review-total" id="total-button">
-            <div class="row">
-              <div class="col-xs-6 col-sm-6">
-                <div class="review-price">
-                  <p>TOTAL<p>
-                   <h3> <%= humanized_money_with_symbol(@order.basket.price + sum_extras) %> </h3>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6">
-                <div class="review-order-total" id="submit-order">
-                  <h5>PLACE ORDER &nbsp;&nbsp;&nbsp;<i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i></h5>
-
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-</div>
 

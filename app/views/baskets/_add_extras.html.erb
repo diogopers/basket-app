@@ -5,16 +5,28 @@
   <%= form.button :submit, :style => "display: none;" %>
 <% end %>
 
-
-<div class="container text-center">
-
+<div class="container text-center padded-bottom">
   <div class="select">
     <h2>Which extras do you want to add to your Basket, delivered weekly?</h2>
   </div>
+<!-- FILTER -->
+  <div class="filter">
+    <h4>Filter by category</h4>
+    <%= form_tag baskets_search_path, method: :get, remote: true, :class => "form-inline checkbox-circle checkbox-primary" do %>
+      <%= check_box_tag :ingredients, 'ingredients', params[:ingredients].present? %>
+      <%= label_tag 'ingredients' %>
+      <%= check_box_tag :bakery, 'bakery', params[:bakery].present? %>
+      <%= label_tag 'bakery' %>
+      <%= check_box_tag :dairy, 'dairy', params[:dairy].present? %>
+      <%= label_tag 'dairy' %>
+      <%= check_box_tag :beverages, 'beverages', params[:beverages].present? %>
+      <%= label_tag 'beverages' %>
+      <%= submit_tag 'Filter' %>
+    <% end %>
+  </div>
+
   <br>
 
-  <!-- FILTER -->
-    <%= render 'extra_orders/filter' %>
     <!-- END FILTER -->
 
 
@@ -24,12 +36,13 @@
 
       <div class="col-xs-12 col-sm-6 col-sm-offset-0 col-md-4">
         <div class="card-container pointer">
+        <%= cl_image_tag extra.producer.photo, class: "card-user avatar pointer", width: '36', height: '36', gravity: "face", crop: "thumb", "data-toggle" => "modal", "data-target" => "#modal-#{extra.producer_id}" %>
           <div data-id="<%=extra.id%>" class="card-wrapper">
+
+
 
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path extra.photo, crop: :fill %>')">
 
-              <%= cl_image_tag extra.producer.photo.url, class: "card-user avatar pointer",
-                       "data-toggle" => "modal", "data-target" => "#modal-#{extra.producer_id}" %>
 
             </div>
               <div class="card-product">

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Basket</title>
+
     <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -20,6 +21,10 @@
     <meta name="twitter:creator" content="@EatLocalBasket">
     <meta name="twitter:image:src" content="<%= root_url.chomp('/') + image_path('facebook-card.jpg') %>">
 
+
+
+    <meta property="og:image:type" content="assets/images/banner.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>

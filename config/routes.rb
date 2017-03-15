@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "baskets/:id/confirmation", to: "baskets#confirmation"
   get "orders/:id/success", to: "orders#success"
   get "orders/:id/failure", to: "orders#failure"
+  get "baskets/search", to: "baskets#search"
 
   resources :users, only: [:show, :edit, :update]
 
