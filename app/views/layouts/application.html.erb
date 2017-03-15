@@ -6,8 +6,26 @@
     <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+
+    <meta name="Basket - Eat Local - Order once, receive weekly" content="With basket, you choose online the best vegetables, fruits and agricultural products sourced from local producers by us and receive your selection weekly.">
+
+    <meta property="og:title" content="Basket - Eat Local - Order once, receive weekly">
+    <meta property="og:image" content="<%= root_url.chomp('/') + image_path('facebook-card.jpg') %>">
+    <meta property="og:description" content="With basket, you choose online the best vegetables, fruits and agricultural products sourced from local producers by us and receive your selection weekly.">
+    <meta property="og:site_name" content="Basket"/>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@EatLocalBasket">
+    <meta name="twitter:title" content="Basket - Eat Local - Order once, receive weekly">
+    <meta name="twitter:description" content="With basket, you choose online the best vegetables, fruits and agricultural products sourced from local producers by us and receive your selection weekly.">
+    <meta name="twitter:creator" content="@EatLocalBasket">
+    <meta name="twitter:image:src" content="<%= root_url.chomp('/') + image_path('facebook-card.jpg') %>">
+
+
+
     <meta property="og:image:type" content="assets/images/banner.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
